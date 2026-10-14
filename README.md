@@ -1,6 +1,6 @@
 # George Videne · CV
 
-CV-ul meu sub forma unui profil pe **Feedfolio**, o rețea socială inventată: povești evidențiate, postări-carusel, comentarii de la versiunile mele mai tinere și mesaje directe.
+CV-ul meu sub forma unui profil de rețea socială inventată: povești evidențiate, postări-carusel, comentarii de la versiunile mele mai tinere și mesaje directe.
 
 **Live:** https://videne.github.io/cv/
 

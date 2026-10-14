@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>George Videne · Feedfolio</title>
+<title>George Videne · CV</title>
 <meta name="description" content="CV-ul lui George Videne, Digital Creative Strategist din București, sub forma unui profil de rețea socială: povești, postări-carusel și mesaje directe.">
 <meta name="author" content="George Videne">
 <meta name="theme-color" content="#0A62E8">
@@ -22,7 +22,7 @@
 </head>
 <body>
 <style>
-/* Layout: an invented photo-feed network ("Feedfolio"). Profile header, story highlights, 3-col grid of typographic posts; posts open as carousels with captions and comments. Brand: George's blue + pink. */
+/* Layout: an invented photo-feed profile, branded with the George Videne wordmark. Profile header, story highlights, 3-col grid of typographic posts; posts open as carousels with captions and comments. Brand: George's blue + pink. */
 :root{
   --bg:#FFFFFF; --bg-2:#F6F7FA; --line:#E3E6EC; --ink:#11151F; --ink-2:#5B6274; --ink-3:#8C93A3;
   --blue:#0A62E8; --pink:#E06BCD; --heart:#E5326B; --btn:#EEF1F6; --btn-h:#E2E7EF; --scrim:rgba(8,10,16,.72);
@@ -32,7 +32,7 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0B0D12; --bg-2:#14171F; --line:#252A35; --ink:#EEF1F7; --ink-2:#A3AABB; --ink-3:#727A8C;
   --blue:#4C8DFF; --pink:#F08BE0; --heart:#FF5C8A; --btn:#1C212C; --btn-h:#252B38; --scrim:rgba(0,0,0,.8); color-scheme:dark}
-  :root:not([data-theme="light"]) .wm-l{display:none} :root:not([data-theme="light"]) .wm-d{display:block}}
+  :root:not([data-theme="light"]) .wm-l{display:none} :root:not([data-theme="light"]) .wm-d,:root:not([data-theme="light"]) .brand img.wm-d{display:block}}
 :root[data-theme="dark"]{
   --bg:#0B0D12; --bg-2:#14171F; --line:#252A35; --ink:#EEF1F7; --ink-2:#A3AABB; --ink-3:#727A8C;
   --blue:#4C8DFF; --pink:#F08BE0; --heart:#FF5C8A; --btn:#1C212C; --btn-h:#252B38; --scrim:rgba(0,0,0,.8); color-scheme:dark}
@@ -47,7 +47,8 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 /* top bar */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top-in{max-width:935px;margin:0 auto;padding:0 16px;height:60px;display:flex;align-items:center;gap:14px}
-.brand{display:flex;align-items:center;gap:9px;font:900 22px/1 var(--f-ui);letter-spacing:-.04em;text-decoration:none}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:30px;width:auto;display:block;margin-left:-5px}
 .brand i{width:26px;height:26px;border-radius:8px;background:conic-gradient(from 200deg,var(--pink),var(--blue),var(--pink));position:relative;display:block}
 .brand i::after{content:"";position:absolute;inset:6px;border-radius:4px;background:var(--bg)}
 .brand span{background:linear-gradient(90deg,var(--ink),var(--ink));-webkit-background-clip:text;background-clip:text}
@@ -82,7 +83,7 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .bio a.lnk{color:var(--blue);font-weight:600;text-decoration:none}
 .bio a.lnk:hover{text-decoration:underline}
 
-:root[data-theme="dark"] .wm-l{display:none} :root[data-theme="dark"] .wm-d{display:block}
+:root[data-theme="dark"] .wm-l{display:none} :root[data-theme="dark"] .wm-d,:root[data-theme="dark"] .brand img.wm-d{display:block}
 /* cover */
 .cover{position:relative;height:clamp(220px,38vw,370px);border-radius:22px;overflow:hidden;margin-bottom:18px;background:#F4EEE2;background-image:radial-gradient(#D9CFBE 1.3px,transparent 1.3px);background-size:18px 18px;isolation:isolate}
 .cover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;background:linear-gradient(90deg,#0A62E8,#E06BCD);z-index:4}
@@ -94,6 +95,7 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .ring{position:relative;z-index:5;margin-top:-92px;box-shadow:0 0 0 6px var(--bg)}
 .wm{height:22px;width:auto;display:block;margin:0 0 2px -3px}
 .wm-d{display:none}
+.brand img.wm-d{display:none}
 /* highlights */
 .hl{display:flex;gap:30px;overflow-x:auto;padding:4px 4px 30px;scrollbar-width:none;border-bottom:1px solid var(--line)}
 .hl::-webkit-scrollbar{display:none}
@@ -303,7 +305,7 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 </style>
 
 <header class="top"><div class="top-in">
-  <a class="brand" href="#" id="home" aria-label="Feedfolio, înapoi la profil"><i aria-hidden="true"></i><span>feedfolio</span></a>
+  <a class="brand" href="#" id="home" aria-label="George Videne, înapoi la profil"><img class="wm-l" src="assets/george-videne-wordmark.svg" alt="George Videne"><img class="wm-d" src="assets/george-videne-wordmark-white.svg" alt=""></a>
   <span class="sp"></span>
   <label class="sbox"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input id="q" type="search" placeholder="Caută: AI, Black Friday, Moët…" autocomplete="off"></label>
   <button class="ib" type="button" id="searchBtn" aria-label="Caută"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
@@ -358,7 +360,7 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
     <div class="dmh"><span class="av"><img id="dmav" alt=""></span><div class="who"><b>george.videne <svg class="ver s" viewBox="0 0 24 24"><use href="#verpath"/></svg></b><span>De obicei răspunde în aceeași zi</span></div><button class="ib" type="button" data-close-dm aria-label="Închide"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <div class="dmbody" id="dmbody">
       <div class="bub">Salut! Mersi că ai trecut pe profil 👋</div>
-      <div class="bub">Feedfolio e doar CV-ul meu deghizat în rețea socială, așa că mesajele ajung la mine pe e-mail. Scrie aici, apoi copiază mesajul sau deschide-l în aplicația ta de mail.</div>
+      <div class="bub">Profilul ăsta e doar CV-ul meu deghizat în rețea socială, așa că mesajele ajung la mine pe e-mail. Scrie aici, apoi copiază mesajul sau deschide-l în aplicația ta de mail.</div>
       <p class="dmnote">Adresa mea: <b class="em"></b></p>
     </div>
     <div class="dmf">
@@ -770,7 +772,7 @@ function closeStory(){ cancelAnimationFrame(timer); story.hidden=true; if(modal.
 /* ---------- DM ---------- */
 const dm=$('#dm');
 function openDM(text){
-  $('#dmtext').value=text||'Salut, George!\n\nAm văzut profilul tău pe Feedfolio și aș vrea să vorbim despre ';
+  $('#dmtext').value=text||'Salut, George!\n\nAm văzut profilul tău și aș vrea să vorbim despre ';
   updMail(); dm.hidden=false; setTimeout(()=>{const t=$('#dmtext'); t.focus(); t.setSelectionRange(t.value.length,t.value.length);},50);
 }
 function updMail(){ $('#mailto').href=`mailto:${EMAIL}?subject=${encodeURIComponent('Salut, George')}&body=${encodeURIComponent($('#dmtext').value)}`; }
