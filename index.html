@@ -149,7 +149,9 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .art .pr{font:500 4.1cqw/1.5 ui-monospace,Menlo,Consolas,monospace;background:rgba(255,255,255,.1);border-radius:3cqw;padding:4cqw;white-space:pre-wrap}
 .art .pr em{font-style:normal;font-weight:700;color:#B4F03A}
 .art .steps{display:flex;flex-direction:column;gap:2.4cqw}
-.art .steps div{display:grid;grid-template-columns:8cqw 1fr;gap:3cqw;align-items:start}
+.art .steps>div{display:grid;grid-template-columns:8cqw 1fr;gap:3cqw;align-items:start}
+.art .steps>div>div{display:block}
+.art .steps span{display:block}
 .art .steps i{font:900 6cqw/1 var(--f-ui);font-style:normal;opacity:.55}
 .art .steps b{display:block;font:800 5.4cqw/1.15 var(--f-ui)}
 .art .steps span{font:500 4.3cqw/1.3 var(--f-ui);opacity:.82}
@@ -307,7 +309,7 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 <header class="top"><div class="top-in">
   <a class="brand" href="#" id="home" aria-label="George Videne, înapoi la profil"><img class="wm-l" src="assets/george-videne-wordmark.svg" alt="George Videne"><img class="wm-d" src="assets/george-videne-wordmark-white.svg" alt=""></a>
   <span class="sp"></span>
-  <label class="sbox"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input id="q" type="search" placeholder="Caută: AI, Black Friday, Moët…" autocomplete="off"></label>
+  <label class="sbox"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input id="q" type="search" placeholder="Caută în CV: AI, Black Friday, Moët…" autocomplete="off"></label>
   <button class="ib" type="button" id="searchBtn" aria-label="Caută"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
   <button class="ib" type="button" data-dm aria-label="Mesaje"><svg class="i" viewBox="0 0 24 24"><path d="M21 4 3 11l7 2.5L12.5 21 21 4Z"/><path d="m10 13.5 4.5-4.5"/></svg><span class="dot" aria-hidden="true"></span></button>
 </div></header>
@@ -323,15 +325,15 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
     <span class="ring" role="button" tabindex="0" data-story="contact" aria-label="Deschide povestea de contact"><span><img id="avatar" alt="George Videne"></span></span>
     <div class="pinfo">
       <div class="urow"><span class="uname">george.videne <svg class="ver" viewBox="0 0 24 24" aria-label="Profil verificat"><path fill="var(--blue)" d="M12 1.5l2.4 1.7 2.9-.2 1 2.7 2.5 1.5-.6 2.9 1.3 2.6-2 2.1-.2 2.9-2.8.8-1.6 2.4-2.9-.6-2.6 1.3-2.1-2-2.9-.2-.8-2.8L1.9 15l.6-2.9L1.2 9.5l2-2.1.2-2.9 2.8-.8L7.8 1.3l2.9.6z"/><path d="m8 12.3 2.6 2.6L16.2 9.3" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div class="btns"><button class="btn pri" type="button" id="follow">Urmărește</button><button class="btn" type="button" data-dm>Mesaj</button><a class="btn" href="george-videne-cv.pdf" target="_blank" rel="noopener">CV PDF</a></div></div>
+        <div class="btns"><a class="btn pri" id="follow" href="https://www.linkedin.com/in/georgevidene/" target="_blank" rel="noopener" title="Urmărește-mă pe LinkedIn">Urmărește</a><button class="btn" type="button" data-dm>Mesaj</button><a class="btn" href="george-videne-cv.pdf" target="_blank" rel="noopener" data-pdf>CV PDF</a></div></div>
       <ul class="stats"><li><b>15</b> postări</li><li><b>30+</b> branduri</li><li><b id="yrs">12</b> ani în digital</li></ul>
       <div class="bio">
         <span class="nm"><img class="wm wm-l" src="assets/george-videne-wordmark.svg" alt="George Videne"><img class="wm wm-d" src="assets/george-videne-wordmark-white.svg" alt=""></span>
         <span class="cat">Digital Creative Strategist · București</span>
-        <span>Construiesc punți între o idee bună și omul care trebuie să o vadă.</span>
+        <span>Fac ideile bune greu de ignorat, în social media, eCommerce și campanii.</span>
         <span>Concept creativ · eCommerce · AI în workflow</span>
         <span>Ex McCann, Saatchi &amp; Saatchi, De Silva Exclusiv. Acum: Spring.</span>
-        <a class="lnk" href="https://videne.memorabil.ro" target="_blank" rel="noopener">videne.memorabil.ro</a>
+        <a class="lnk" href="https://www.linkedin.com/in/georgevidene/" target="_blank" rel="noopener">linkedin.com/in/georgevidene</a>
       </div>
     </div>
   </section>
@@ -360,13 +362,13 @@ svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stro
     <div class="dmh"><span class="av"><img id="dmav" alt=""></span><div class="who"><b>george.videne <svg class="ver s" viewBox="0 0 24 24"><use href="#verpath"/></svg></b><span>De obicei răspunde în aceeași zi</span></div><button class="ib" type="button" data-close-dm aria-label="Închide"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <div class="dmbody" id="dmbody">
       <div class="bub">Salut! Mersi că ai trecut pe profil 👋</div>
-      <div class="bub">Profilul ăsta e doar CV-ul meu deghizat în rețea socială, așa că mesajele ajung la mine pe e-mail. Scrie aici, apoi copiază mesajul sau deschide-l în aplicația ta de mail.</div>
+      <div class="bub">Scrie-mi aici. Mesajul pleacă din aplicația ta de e-mail.</div>
       <p class="dmnote">Adresa mea: <b class="em"></b></p>
     </div>
     <div class="dmf">
       <label for="dmtext" style="position:absolute;left:-9999px">Mesajul tău</label>
       <textarea id="dmtext" placeholder="Scrie un mesaj…"></textarea>
-      <div class="row"><button class="btn pri" type="submit">Copiază mesajul</button><a class="btn" id="mailto" href="#" target="_blank" rel="noopener">Deschide în aplicația de mail</a></div>
+      <div class="row"><a class="btn pri" id="mailto" href="#">Trimite pe e-mail</a><button class="btn" type="submit">Copiază mesajul</button></div>
     </div>
   </form>
 </div>
@@ -393,7 +395,7 @@ const P=[
   cover:{kind:'photo',big:'60s',lab:'George în 60 de secunde',k:'Începe aici'},
   slides:[
    {kind:'photo',k:'Începe aici',big:'Salut!',lab:'Sunt George. Glisează pentru varianta de 60 de secunde →'},
-   {kind:'stats',h:'Pe scurt',items:[[String(YEARS),'ani în digital'],['30+','branduri'],['8','agenții și companii'],['6','unelte AI zilnic']]},
+   {kind:'stats',h:'Pe scurt',items:[[String(YEARS),'ani în digital'],['30+','branduri'],['100+','materiale grafice pe lună'],['2×','comunitatea de Instagram, la Spring']]},
    {kind:'list',h:'La ce sunt cel mai bun',items:['<b>Concept creativ</b>: campanii, copy și materiale grafice','<b>Social media</b> și campanii integrate','<b>eCommerce</b>: landing pages, newsletter, checkout','<b>AI</b> în fiecare etapă a muncii']},
    {kind:'quote',q:'Îmi place marketingul care nu doar arată bine. Trebuie să miște ceva: un KPI, un produs sau măcar o sprânceană.',a:'George'},
    {kind:'cta',h:'Ce caut',p:'Echipe și proiecte în care creativitatea, digitalul și AI-ul lucrează împreună.',btn:'Scrie-mi un mesaj'}
@@ -404,25 +406,26 @@ const P=[
  {id:'ai',pin:true,bg:'night',loc:'Spring · București',date:'Acum',
   cover:{kind:'title',k:'AI Lab',t:'Am un coleg nou. Se numește AI.'},
   slides:[
-   {kind:'cover',k:'AI Lab',t:'Am un coleg nou. Se numește AI.',f:'6 unelte, zilnic →',bar:true},
-   {kind:'list',h:'Trusa mea AI',items:['<b>Claude</b>: texte lungi, landing pages, cod','<b>ChatGPT</b>: idei rapide și variante de copy','<b>Gemini</b>: research și a doua opinie','<b>NotebookLM</b>: sinteze din documente lungi','<b>ElevenLabs</b>: voice-over','<b>InVideo</b>: video din prompturi']},
-   {kind:'list',h:'Ce construiesc singur',items:['Landing page-uri, mult mai repede','Mini-aplicații pentru sarcinile zilnice','Automatizări pentru munca repetitivă','Dashboarduri: ce merge și ce nu']},
+   {kind:'cover',k:'AI Lab',t:'Am un coleg nou. Se numește AI.',f:'Ce construim împreună →',bar:true},
+   {kind:'list',h:'Ce construiesc cu AI',items:['<b>Concept și research</b>: idei, unghiuri, a doua opinie','<b>Materiale grafice și video</b> pentru site și campanii','<b>Dashboarduri</b> care ușurează munca mea și a echipei','<b>Automatizări</b> pentru munca repetitivă','<b>Mini-aplicații</b> pentru sarcinile zilnice','<b>Video și voce</b> generate din prompturi']},
+   {kind:'chips',h:'Uneltele',items:['Claude','ChatGPT','Gemini','NotebookLM','ElevenLabs','InVideo']},
    {kind:'prompt',h:'Cum arată un prompt bun',pr:'<em>Rol:</em> copywriter pentru o rețea de farmacii\n<em>Context:</em> campanie de toamnă despre imunitate, public 30–55 ani\n<em>Sarcină:</em> 5 subiecte de newsletter, max. 45 de caractere\n<em>Ton:</em> cald, util, fără promisiuni medicale\n<em>Format:</em> listă, apoi alege-l pe cel mai bun'},
    {kind:'quote',q:'Un prompt bun e tot un brief bun. Iar brief-uri scriu de '+YEARS+' ani.',a:'George'}
   ],
-  cap:['În ultima vreme, munca mea la Spring s-a schimbat mai mult decât în toți anii dinainte. Folosesc zilnic șase unelte AI, ca pe o echipă în care fiecare are rolul lui.','Cea mai mare schimbare: am început să-mi construiesc singur uneltele de lucru. AI-ul accelerează munca, iar decizia rămâne la mine.'],
+  cap:['În ultima vreme, munca mea la Spring s-a schimbat mai mult decât în toți anii dinainte. Nu colecționez unelte AI. Le pun la treabă: automatizări, mini-aplicații, dashboarduri, video și voce, fiecare cu rolul ei în workflow.','Cea mai mare schimbare: am început să-mi construiesc singur uneltele de lucru. AI-ul accelerează munca, iar decizia rămâne la mine.'],
   tags:'#AI #PromptWriting #Automatizări',
-  comments:[['2012','Pe vremea mea, „automatizare” însemna un template salvat în Word. Bravo, omule. Doar să nu uiți cum se scrie un titlu bun de mână.','Copywriter Executive'],['ai','Rezumat: șase unelte AI zilnic pentru text, voce și video, prompturi structurate și unelte construite singur.']]},
+  comments:[['2012','Pe vremea mea, „automatizare” însemna un template salvat în Word. Bravo, omule. Doar să nu uiți cum se scrie un titlu bun de mână.','Copywriter Executive'],['ai','Rezumat: AI folosit ca workflow, nu ca listă de unelte. Materiale grafice și video, dashboarduri pentru echipă, automatizări și mini-aplicații, plus prompturi scrise ca brief-uri.']]},
  {id:'spring',bg:'pink',loc:'Spring · Farmacia La Preț Mic',date:'aug 2022 – prezent',
   cover:{kind:'title',k:'2022 → azi',t:'Partea creativă a unei farmacii'},
   slides:[
    {kind:'cover',k:'Spring · 2022 → azi',t:'Partea creativă a unei farmacii',f:'Digital Marketing Specialist'},
-   {kind:'text',h:'Ce fac',p:'Gândesc conceptele campaniilor și realizez materialele grafice de promovare, de la idee și copy până la vizualul final, ca textul și imaginea să spună aceeași poveste.'},
-   {kind:'steps',h:'Black Friday, în 5 straturi',items:[['Ideea mare','un fir care ține săptămâni întregi'],['Key visual și copy','identitatea campaniei'],['Declinarea','postări, bannere, newsletter, landing'],['Ritmul','teaser, lansare, ultima șansă'],['Execuția','brief-uri, verificări, ajustări']]},
-   {kind:'text',h:'Checkout-ul',p:'Am făcut designul checkout-ului din site. Un checkout bun e cel pe care clientul aproape nu-l observă: pași puțini, informații clare și niciun motiv de ezitare.'},
-   {kind:'list',h:'Și zilnic',items:['Social media și newsletter','Landing pages','Agențiile media: Meta și Google Ads','AI în aproape fiecare etapă']}
+   {kind:'stats',h:'În cifre',items:[['100+','materiale grafice pe lună'],['2×','urmăritori pe Instagram'],['~50K','urmăritori pe TikTok'],['↑','comenzi peste media pieței, de Black Friday']]},
+   {kind:'steps',h:'Caz: Black Friday',items:[['Problema','De Black Friday, toate reducerile arată la fel'],['Ideea','Un concept cu nume și identitate vizuală proprii'],['Ce am făcut','Concept, nume, key visual, declinat pe site, social și promo'],['Impact','Una dintre cele mai vizibile campanii din pharma online']]},
+   {kind:'steps',h:'Caz: checkout',items:[['Problema','Drum lung de la coș la comandă, cu mulți pași'],['Ce am făcut','Am redesenat fluxul și l-am dus până la implementare'],['Impact','Rată de abandon mai mică și vânzări mai mari']]},
+   {kind:'list',h:'E-mail care lucrează singur',items:['<b>Newsletter</b> construit manual, cu rată de deschidere peste medie','<b>Coș abandonat</b>: reamintire automată','<b>Clienți inactivi</b>: e-mail de revenire','<b>Alte momente</b> din drumul de cumpărare, automatizate']},
+   {kind:'list',h:'Și în fiecare zi',items:['Coordonez social media și newsletterele','Construiesc landing page-uri','Lucrez cu agențiile media pentru Meta și Google Ads','Folosesc AI în aproape fiecare etapă']}
   ],
-  cap:['După ani buni în agenții, am trecut în echipa brandului. La Spring am grijă ca fiecare mesaj al farmaciei să arate și să sune bine, de la prima idee de campanie până la ultimul banner.','Asta include campaniile mari ale anului, ca Black Friday, unde un singur concept ține împreună zeci de materiale, pe toate canalele.'],
+  cap:['După ani buni în agenții, am trecut în echipa brandului. La Spring am grijă ca fiecare mesaj al farmaciei să arate și să sune bine, de la prima idee de campanie până la ultimul banner.','Asta înseamnă peste 100 de materiale grafice pe lună și campaniile mari ale anului, ca Black Friday, unde un singur concept ține împreună totul, pe toate canalele. Între timp, comunitatea de pe Instagram s-a dublat, iar TikTok-ul a ajuns aproape de 50.000 de urmăritori.'],
   tags:'#ConceptCreativ #BlackFriday #eCommerce',
   comments:[['2015','Deci acum tu scrii brief-urile pe care le primeam eu? Fii blând cu account-ul. Știi din experiență cât contează un brief clar.','Account Manager la Tuio'],['me','Partea mea preferată: momentul în care un concept bun face ca toate materialele să sune ca o singură voce.']]},
  {id:'desilva',bg:'cream',loc:'De Silva Exclusiv · București',date:'mai 2017 – iul 2022',
@@ -441,10 +444,11 @@ const P=[
   slides:[
    {kind:'cover',k:'McCann Worldgroup · 2016–2017',t:'Ce m-a învățat McCann în 9 luni',f:'Social Media Manager'},
    {kind:'text',h:'Procese mari, echipe mari',p:'Am gestionat social media într-un mediu în care fiecare idee trece prin strategie, creație și client înainte să ajungă pe ecran. Aici am învățat cum păstrezi o idee vie pe tot drumul.'},
+   {kind:'list',h:'Ce făceam',items:['Social media pentru <b>Nespresso</b>','Lucru zilnic cu echipele de strategie și creație','Conținut și calendare aliniate la standardele rețelei']},
    {kind:'quote',q:'Disciplina de proces de aici o folosesc și azi, de partea brandului.',a:'George'}
   ],
   cap:['Nouă luni într-una dintre cele mai mari rețele de comunicare din lume. Standarde pe care le simți în fiecare livrabil.'],
-  tags:'#Agenție #SocialMedia',comments:[]},
+  tags:'#Agenție #SocialMedia #Nespresso',comments:[]},
  {id:'frank',bg:'lime',loc:'Frank Group · București',date:'mai – sep 2016',
   cover:{kind:'title',k:'Vara lui 2016',t:'Aperol, Campari și Johnnie Walker pe același ecran'},
   slides:[
@@ -541,21 +545,22 @@ const ICO={
 };
 const H=[
  {id:'ai',name:'AI Lab',ico:'ai',bg:'night',slides:[
-   {kind:'cover',k:'AI Lab',t:'6 unelte AI. Zilnic.',f:'Atinge pentru următoarea →',bar:true},
-   {kind:'list',h:'Trusa',items:['<b>Claude</b>: texte, landing pages, cod','<b>ChatGPT</b>: idei și variante','<b>Gemini</b>: research','<b>NotebookLM</b>: sinteze','<b>ElevenLabs</b>: voce','<b>InVideo</b>: video']},
-   {kind:'list',h:'Construiesc singur',items:['Landing page-uri','Mini-aplicații','Automatizări','Dashboarduri']},
+   {kind:'cover',k:'AI Lab',t:'AI-ul, pus la treabă.',f:'Atinge pentru următoarea →',bar:true},
+   {kind:'list',h:'Ce construiesc',items:['Automatizări','Mini-aplicații','Dashboarduri','Video și voce din prompturi','Landing page-uri']},
+   {kind:'chips',h:'Cu ce',items:['Claude','ChatGPT','Gemini','NotebookLM','ElevenLabs','InVideo']},
    {kind:'quote',q:'Un prompt bun e tot un brief bun.',a:'George'}]},
  {id:'bf',name:'Black Friday',ico:'tag',bg:'pink',slides:[
-   {kind:'cover',k:'Black Friday',t:'Fără încă un banner cu -50%',f:'5 straturi →'},
-   {kind:'text',h:'1 · Ideea mare',p:'Un fir creativ care ține câteva săptămâni și zeci de materiale fără să obosească.'},
-   {kind:'text',h:'2 · Key visual și copy',p:'Vizualul principal, mesajele cheie și tonul, gândite împreună de la început.'},
-   {kind:'text',h:'3 · Declinarea',p:'Postări și stories, bannere, newslettere, landing page și reclame Meta și Google.'},
-   {kind:'text',h:'4 · Ritmul',p:'Teaser, lansare, reamintiri și ultima șansă, fiecare moment cu mesajul lui.'},
-   {kind:'text',h:'5 · Execuția',p:'Brief-uri pentru agenție, verificarea materialelor și ajustări din mers.'},
+   {kind:'cover',k:'Black Friday',t:'Fără încă un banner cu -50%',f:'Studiu de caz →'},
+   {kind:'text',h:'Problema',p:'De Black Friday, toate reducerile arată la fel. Un -50% în plus nu mai e văzut de nimeni.'},
+   {kind:'text',h:'Ideea',p:'O campanie cu nume și identitate vizuală proprii, nu doar un procent mare pe un fundal negru.'},
+   {kind:'text',h:'Ce am făcut',p:'Conceptul, numele campaniei și identitatea vizuală, apoi declinarea lor în bannere pe site, social media și celelalte materiale de promovare.'},
+   {kind:'text',h:'Impact',p:'Una dintre cele mai vizibile campanii din pharma online. Feedback bun de la clienți și parteneri, iar comenzile au crescut peste media pieței în aceeași perioadă.'},
    {kind:'quote',q:'Partea mea preferată: când toate materialele sună ca o singură voce.',a:'George'}]},
  {id:'checkout',name:'Checkout',ico:'cart',bg:'sky',slides:[
    {kind:'cover',k:'UX · Spring',t:'Checkout-ul pe care nu-l observi',f:'→'},
-   {kind:'list',h:'Un checkout bun',items:['Pași puțini','Informații clare','Niciun motiv de ezitare','De la coș la comandă, fără ocolișuri']},
+   {kind:'text',h:'Problema',p:'Drumul de la coș la comandă era anevoios, cu prea mulți pași.'},
+   {kind:'text',h:'Ce am făcut',p:'Am redesenat checkout-ul, cu mai puțini pași și informații mai clare, și l-am dus până la implementare.'},
+   {kind:'text',h:'Impact',p:'Rată de abandon mai mică și vânzări mai mari.'},
    {kind:'quote',q:'Aici se întâlnesc cele două lucruri care îmi plac cel mai mult: designul și UX-ul.',a:'George'}]},
  {id:'brands',name:'Branduri',ico:'star',bg:'cream',slides:[
    {kind:'cover',k:'Portofoliu',t:'30+ branduri, fiecare cu vocea lui',f:'→'},
@@ -564,13 +569,13 @@ const H=[
    {kind:'chips',h:'Tuio și Spring',items:['HARIBO','Superbet','Ștefan Bănică','Vacamuuu','Ramada Sibiu','Steaua Baschet','M1','Atlassib','BTT','Spring']}]},
  {id:'skills',name:'Superputeri',ico:'bolt',bg:'lime',slides:[
    {kind:'cover',k:'Superputeri',t:'Ce aduc într-o echipă',f:'→'},
-   {kind:'list',h:'Creație',items:['Concept creativ și key visual','Copywriting','Materiale grafice de promovare','Design Thinking și UX/UI']},
-   {kind:'list',h:'Digital',items:['Social media și comunitate','Newsletter și e-mail','Landing pages și checkout','Paid media: Meta și Google Ads','AI și prompt writing']}]},
+   {kind:'list',h:'Creație',items:['Concept creativ și key visual','Copywriting','Materiale grafice de promovare','UX/UI pentru eCommerce']},
+   {kind:'list',h:'Digital',items:['Social media și comunitate','Newsletter și e-mail','Landing pages și checkout','Strategie și coordonare paid media: Meta și Google','AI în workflow']}]},
  {id:'langs',name:'Limbi',ico:'globe',bg:'lilac',slides:[
-   {kind:'list',h:'Trei limbi',items:['<b>Română</b>: nativ','<b>Engleză</b>: profesional','<b>Franceză</b>: noțiuni de bază']}]},
+   {kind:'list',h:'Trei limbi',items:['<b>Română</b>: nativ','<b>Engleză</b>: avansat','<b>Franceză</b>: elementar']}]},
  {id:'contact',name:'Contact',ico:'mail',bg:'blue',slides:[
    {kind:'photo',k:'Contact',big:'Hai!',lab:'Să lucrăm împreună'},
-   {kind:'cta',h:'Unde mă găsești',p:EMAIL+'\nlinkedin.com/in/georgevidene\nvidene.memorabil.ro',btn:'Scrie-mi un mesaj'}]}
+   {kind:'cta',h:'Unde mă găsești',p:EMAIL+'\nlinkedin.com/in/georgevidene\n\nBonus: același CV, ca inbox de e-mail, pe videne.memorabil.ro',btn:'Scrie-mi un mesaj'}]}
 ];
 const HBYID=Object.fromEntries(H.map(h=>[h.id,h]));
 
@@ -604,7 +609,7 @@ const I_SAVE='<path d="M6 3.5h12v17l-6-4.5-6 4.5z"/>';
 
 /* ---------- state ---------- */
 let liked=new Set(store.get('liked',[])), saved=new Set(store.get('saved',[])), seen=new Set(store.get('seen',[]));
-let following=store.get('follow',false), tab='posts', query='';
+let tab='posts', query='';
 
 /* ---------- profile ---------- */
 $('#avatar').src=HEAD; $('#dmav').src=HEAD; $('#yrs').textContent=YEARS;
@@ -613,8 +618,6 @@ const verSvg=document.createElementNS('http://www.w3.org/2000/svg','svg'); verSv
 verSvg.innerHTML='<symbol id="verpath" viewBox="0 0 24 24"><path fill="var(--blue)" d="M12 1.5l2.4 1.7 2.9-.2 1 2.7 2.5 1.5-.6 2.9 1.3 2.6-2 2.1-.2 2.9-2.8.8-1.6 2.4-2.9-.6-2.6 1.3-2.1-2-2.9-.2-.8-2.8L1.9 15l.6-2.9L1.2 9.5l2-2.1.2-2.9 2.8-.8L7.8 1.3l2.9.6z"/><path d="m8 12.3 2.6 2.6L16.2 9.3" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>';
 document.body.prepend(verSvg);
 const VER='<svg class="ver s" viewBox="0 0 24 24"><use href="#verpath"/></svg>';
-function renderFollow(){ const b=$('#follow'); b.textContent=following?'Urmărești ✓':'Urmărește'; b.classList.toggle('pri',!following); b.classList.toggle('on',following); }
-renderFollow();
 function renderHL(){
   $('#hl').innerHTML=H.map(h=>{const [b,f]=C[h.bg];return `<button class="hli ${seen.has(h.id)?'seen':''}" type="button" data-story="${h.id}"><span class="hlc"><span style="background:${b};color:${f}">${SV(ICO[h.ico])}</span></span>${esc(h.name)}</button>`;}).join('');
 }
@@ -793,7 +796,6 @@ document.addEventListener('click',e=>{
   const st=t.closest('[data-story]'); if(st){ openStory(st.dataset.story); return; }
   const po=t.closest('[data-post]'); if(po){ openPost(po.dataset.post,po); return; }
   const tb=t.closest('[data-tab]'); if(tb){ tab=tb.dataset.tab; document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',x===tb)); renderGrid(); return; }
-  if(t.closest('#follow')){ following=!following; store.set('follow',following); renderFollow(); if(following) toast(`Mersi! Ca să mă urmărești de-adevăratelea: <a href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>.`); return; }
   if(t.closest('#home')){ e.preventDefault(); query=''; $('#q').value=''; tab='posts'; document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',x.dataset.tab==='posts')); renderGrid(); window.scrollTo({top:0,behavior:RM?'auto':'smooth'}); return; }
   if(t.closest('#searchBtn')){ const q=$('#q'); if(getComputedStyle($('.sbox')).display==='none'){ const v=window.prompt?null:null; $('#grid').scrollIntoView({behavior:RM?'auto':'smooth'}); toggleMobileSearch(); } else q.focus(); return; }
 });
@@ -801,7 +803,7 @@ function toggleMobileSearch(){
   let bar=$('#msearch');
   if(bar){ bar.remove(); query=''; renderGrid(); return; }
   bar=document.createElement('div'); bar.id='msearch'; bar.className='sbox'; bar.style.cssText='display:flex;width:100%;margin:0 0 12px';
-  bar.innerHTML='<svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input type="search" placeholder="Caută: AI, Black Friday, Moët…" aria-label="Caută în postări">';
+  bar.innerHTML='<svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input type="search" placeholder="Caută în CV: AI, Black Friday, Moët…" aria-label="Caută în postări">';
   $('#grid').before(bar); const inp=bar.querySelector('input'); inp.focus();
   inp.addEventListener('input',e=>{ query=e.target.value.trim().toLowerCase(); renderGrid(); });
 }
@@ -815,6 +817,7 @@ document.addEventListener('keydown',e=>{
 const h=location.hash.slice(1); if(BYID[h]) openPost(h);
 })();
 </script>
+
 
 </body>
 </html>
