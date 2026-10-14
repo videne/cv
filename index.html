@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>George Videne · Feedfolio</title>
+<meta name="description" content="CV-ul lui George Videne, Digital Creative Strategist din București, sub forma unui profil de rețea socială: povești, postări-carusel și mesaje directe.">
+<meta name="author" content="George Videne">
+<meta name="theme-color" content="#0A62E8">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="George Videne · Digital Creative Strategist">
+<meta property="og:description" content="Un CV sub formă de profil social. 15 postări, 7 povești și un George din 2012.">
+<meta property="og:image" content="https://videne.github.io/cv/assets/og.png">
+<meta property="og:url" content="https://videne.github.io/cv/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap">
+</head>
+<body>
+<style>
+/* Layout: an invented photo-feed network ("Feedfolio"). Profile header, story highlights, 3-col grid of typographic posts; posts open as carousels with captions and comments. Brand: George's blue + pink. */
+:root{
+  --bg:#FFFFFF; --bg-2:#F6F7FA; --line:#E3E6EC; --ink:#11151F; --ink-2:#5B6274; --ink-3:#8C93A3;
+  --blue:#0A62E8; --pink:#E06BCD; --heart:#E5326B; --btn:#EEF1F6; --btn-h:#E2E7EF; --scrim:rgba(8,10,16,.72);
+  --f-ui:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B0D12; --bg-2:#14171F; --line:#252A35; --ink:#EEF1F7; --ink-2:#A3AABB; --ink-3:#727A8C;
+  --blue:#4C8DFF; --pink:#F08BE0; --heart:#FF5C8A; --btn:#1C212C; --btn-h:#252B38; --scrim:rgba(0,0,0,.8); color-scheme:dark}
+  :root:not([data-theme="light"]) .wm-l{display:none} :root:not([data-theme="light"]) .wm-d{display:block}}
+:root[data-theme="dark"]{
+  --bg:#0B0D12; --bg-2:#14171F; --line:#252A35; --ink:#EEF1F7; --ink-2:#A3AABB; --ink-3:#727A8C;
+  --blue:#4C8DFF; --pink:#F08BE0; --heart:#FF5C8A; --btn:#1C212C; --btn-h:#252B38; --scrim:rgba(0,0,0,.8); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-in{max-width:935px;margin:0 auto;padding:0 16px;height:60px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:9px;font:900 22px/1 var(--f-ui);letter-spacing:-.04em;text-decoration:none}
+.brand i{width:26px;height:26px;border-radius:8px;background:conic-gradient(from 200deg,var(--pink),var(--blue),var(--pink));position:relative;display:block}
+.brand i::after{content:"";position:absolute;inset:6px;border-radius:4px;background:var(--bg)}
+.brand span{background:linear-gradient(90deg,var(--ink),var(--ink));-webkit-background-clip:text;background-clip:text}
+.sp{flex:1}
+.sbox{display:flex;align-items:center;gap:8px;background:var(--btn);border-radius:10px;padding:0 12px;height:38px;width:min(268px,40vw)}
+.sbox svg{width:18px;height:18px;color:var(--ink-3)}
+.sbox input{border:0;background:none;outline:none;flex:1;min-width:0}
+.ib{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;position:relative}
+.ib:hover{background:var(--btn)}
+.dot{position:absolute;top:7px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--heart);border:2px solid var(--bg)}
+
+/* profile */
+.wrap{max-width:935px;margin:0 auto;padding-inline:16px;padding-block:30px 60px}
+.prof{display:grid;grid-template-columns:minmax(120px,290px) 1fr;gap:28px;align-items:center;padding-bottom:34px}
+.ring{width:168px;height:168px;border-radius:50%;padding:5px;background:conic-gradient(from 210deg,var(--pink),var(--blue),#8E6BFF,var(--pink));justify-self:center;display:block}
+.ring span{display:block;width:100%;height:100%;border-radius:50%;background:var(--bg);padding:5px}
+.ring img{width:100%;height:100%;border-radius:50%;object-fit:contain;background:#DDE9FF;display:block}
+.pinfo{display:flex;flex-direction:column;gap:18px;min-width:0}
+.urow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.uname{font:600 21px/1.2 var(--f-ui);display:flex;align-items:center;gap:6px}
+.ver{width:18px;height:18px}
+.btn{height:34px;padding:0 16px;border-radius:9px;font:600 14px var(--f-ui);background:var(--btn);display:inline-flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap}
+.btn:hover{background:var(--btn-h)}
+.btn.pri{background:var(--blue);color:#fff}
+.btn.pri:hover{filter:brightness(1.07)}
+.btn.on{background:var(--btn);color:var(--ink)}
+.stats{display:flex;gap:36px;list-style:none;margin:0;padding:0;font-size:16px}
+.stats b{font-weight:700;font-variant-numeric:tabular-nums}
+.bio{display:flex;flex-direction:column;gap:2px;font-size:14.5px;max-width:52ch}
+.bio .nm{font-weight:700}
+.bio .cat{color:var(--ink-3)}
+.bio a.lnk{color:var(--blue);font-weight:600;text-decoration:none}
+.bio a.lnk:hover{text-decoration:underline}
+
+:root[data-theme="dark"] .wm-l{display:none} :root[data-theme="dark"] .wm-d{display:block}
+/* cover */
+.cover{position:relative;height:clamp(220px,38vw,370px);border-radius:22px;overflow:hidden;margin-bottom:18px;background:#F4EEE2;background-image:radial-gradient(#D9CFBE 1.3px,transparent 1.3px);background-size:18px 18px;isolation:isolate}
+.cover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;background:linear-gradient(90deg,#0A62E8,#E06BCD);z-index:4}
+.cv-george{position:absolute;left:4%;top:17%;width:min(58%,560px);opacity:.2;z-index:1}
+.cv-videne{position:absolute;left:3.2%;top:42%;width:min(66%,640px);z-index:1}
+.cv-photo{position:absolute;right:1%;bottom:0;height:104%;width:auto;z-index:2;-webkit-mask-image:linear-gradient(90deg,transparent 4%,#000 26%,#000 80%,transparent 98%);mask-image:linear-gradient(90deg,transparent 4%,#000 26%,#000 80%,transparent 98%)}
+.cv-tag{position:absolute;left:4.2%;top:7%;z-index:3;font:700 clamp(9px,1.4vw,13px) var(--f-ui);letter-spacing:.18em;text-transform:uppercase;color:#11151F;background:#fff;padding:7px 12px;border-radius:99px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.prof{position:relative;z-index:5;align-items:start}
+.ring{position:relative;z-index:5;margin-top:-92px;box-shadow:0 0 0 6px var(--bg)}
+.wm{height:22px;width:auto;display:block;margin:0 0 2px -3px}
+.wm-d{display:none}
+/* highlights */
+.hl{display:flex;gap:30px;overflow-x:auto;padding:4px 4px 30px;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.hl::-webkit-scrollbar{display:none}
+.hli{display:flex;flex-direction:column;align-items:center;gap:8px;flex:none;width:86px;font:600 12.5px var(--f-ui);color:var(--ink)}
+.hlc{width:80px;height:80px;border-radius:50%;padding:3px;border:1px solid var(--line);display:grid;place-items:center}
+.hlc span{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;color:#fff}
+.hlc svg{width:30px;height:30px}
+.hli:hover .hlc{border-color:var(--ink-3)}
+.hli.seen .hlc{opacity:.75}
+
+/* tabs */
+.tabs{display:flex;justify-content:center;gap:56px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.tab{display:flex;align-items:center;gap:7px;height:52px;font:600 12.5px var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border-top:1px solid transparent;margin-top:-1px}
+.tab svg{width:14px;height:14px;stroke-width:2.2}
+.tab[aria-selected="true"]{color:var(--ink);border-top-color:var(--ink)}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.tile{position:relative;aspect-ratio:1;overflow:hidden;display:block;width:100%;text-align:left;container-type:inline-size}
+.tile .ov{position:absolute;inset:0;background:rgba(0,0,0,.42);color:#fff;display:flex;align-items:center;justify-content:center;gap:22px;font:700 16px var(--f-ui);opacity:0;transition:opacity .2s}
+.tile .ov span{display:flex;align-items:center;gap:6px}
+.tile .ov svg{width:20px;height:20px;fill:#fff;stroke:#fff}
+.tile:hover .ov,.tile:focus-visible .ov{opacity:1}
+.tile .badge{position:absolute;top:8px;right:8px;width:20px;height:20px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+.tile .badge svg{width:20px;height:20px}
+.empty{grid-column:1/-1;padding:60px 16px;text-align:center;color:var(--ink-2)}
+.empty b{display:block;font-size:20px;color:var(--ink);margin-bottom:4px}
+
+/* artwork (posts, covers, slides) — fixed palette: these are "images" */
+.art{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:9cqw 8cqw;font-family:var(--f-ui);overflow:hidden}
+.art .k{font:700 4.6cqw/1.2 var(--f-ui);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.art .t{font:850 11cqw/1.02 var(--f-ui);font-weight:850;letter-spacing:-.035em;text-wrap:balance}
+.art .t.s{font-size:8.6cqw}
+.art .f{font:600 4.4cqw/1.3 var(--f-ui);opacity:.8;display:flex;justify-content:space-between;align-items:center;gap:3cqw}
+.art .big{font:900 34cqw/0.9 var(--f-ui);letter-spacing:-.06em}
+.art .lab{font:700 7cqw/1.1 var(--f-ui);letter-spacing:-.02em}
+.art .q{font:italic 400 10cqw/1.08 var(--f-serif);letter-spacing:-.01em;text-wrap:balance}
+.art .p{font:500 5cqw/1.42 var(--f-ui);text-wrap:pretty}
+.art .h{font:800 7.4cqw/1.08 var(--f-ui);letter-spacing:-.025em}
+.art ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2.6cqw}
+.art li{font:600 5cqw/1.3 var(--f-ui);display:grid;grid-template-columns:5cqw 1fr;gap:2.4cqw}
+.art li::before{content:"→";opacity:.6}
+.art li b{font-weight:800}
+.art .chips{display:flex;flex-wrap:wrap;gap:2cqw}
+.art .chips span{font:700 4.3cqw/1 var(--f-ui);padding:2.2cqw 3.2cqw;border-radius:99px;border:.45cqw solid currentColor;opacity:.92}
+.art .stg{display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.art .stg div{border-radius:3.5cqw;padding:4cqw;background:rgba(255,255,255,.14)}
+.art.lt .stg div{background:rgba(0,0,0,.06)}
+.art .stg b{display:block;font:900 13cqw/1 var(--f-ui);letter-spacing:-.04em}
+.art .stg span{font:600 4.2cqw/1.2 var(--f-ui);opacity:.8}
+.art .pr{font:500 4.1cqw/1.5 ui-monospace,Menlo,Consolas,monospace;background:rgba(255,255,255,.1);border-radius:3cqw;padding:4cqw;white-space:pre-wrap}
+.art .pr em{font-style:normal;font-weight:700;color:#B4F03A}
+.art .steps{display:flex;flex-direction:column;gap:2.4cqw}
+.art .steps div{display:grid;grid-template-columns:8cqw 1fr;gap:3cqw;align-items:start}
+.art .steps i{font:900 6cqw/1 var(--f-ui);font-style:normal;opacity:.55}
+.art .steps b{display:block;font:800 5.4cqw/1.15 var(--f-ui)}
+.art .steps span{font:500 4.3cqw/1.3 var(--f-ui);opacity:.82}
+.art .gbar{height:2.6cqw;border-radius:2cqw;background:linear-gradient(90deg,#B78EFF,#D2C6E8 50%,#B4F03A);width:42%}
+.art .cta{align-self:flex-start;font:700 5cqw/1 var(--f-ui);padding:3.4cqw 5.6cqw;border-radius:99px;background:currentColor}
+.art .cta span{color:var(--ctab,#0A62E8)}
+.art .deco{position:absolute;right:-12cqw;bottom:-12cqw;width:62cqw;height:62cqw;border-radius:50%;border:2.4cqw solid currentColor;opacity:.12;pointer-events:none}
+.art .deco.sq{border-radius:12cqw;transform:rotate(18deg)}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:28px 70px}
+.modal[hidden]{display:none}
+.mclose{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;color:#fff;width:44px;height:44px;display:grid;place-items:center}
+.mclose svg{width:28px;height:28px}
+.mnav{position:fixed;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);color:#11151F;display:grid;place-items:center}
+.mnav.l{left:18px}.mnav.r{right:18px}
+.mnav svg{width:20px;height:20px;stroke-width:2.4}
+.post{display:grid;grid-template-columns:minmax(0,1fr) 380px;background:var(--bg);max-height:min(92vh,760px);width:min(1180px,100%);border-radius:6px;overflow:hidden}
+.car{position:relative;background:#000;aspect-ratio:1;max-height:min(92vh,760px);overflow:hidden;container-type:inline-size;touch-action:pan-y;user-select:none}
+.track{display:flex;height:100%;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.slide{flex:0 0 100%;height:100%;position:relative;container-type:inline-size}
+.carb{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.88);color:#11151F;display:grid;place-items:center;box-shadow:0 1px 6px rgba(0,0,0,.2)}
+.carb svg{width:16px;height:16px;stroke-width:2.6}
+.carb.l{left:12px}.carb.r{right:12px}
+.carb[hidden]{display:none}
+.dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45)}
+.dots i.on{background:#fff}
+.cnt{position:absolute;top:14px;right:14px;background:rgba(17,21,31,.7);color:#fff;font:600 12px var(--f-ui);padding:4px 9px;border-radius:99px}
+.bigheart{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;color:#fff;opacity:0;pointer-events:none;filter:drop-shadow(0 4px 18px rgba(0,0,0,.35))}
+.bigheart svg{width:100%;height:100%;fill:#fff;stroke:none}
+.bigheart.go{animation:pop .9s ease-out}
+@keyframes pop{0%{opacity:0;transform:scale(.4)}20%{opacity:1;transform:scale(1.1)}40%{transform:scale(.95)}75%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.05)}}
+.side{display:flex;flex-direction:column;min-height:0;min-width:0;border-left:1px solid var(--line)}
+.ph{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;font:800 12px var(--f-ui);color:#fff;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:contain;background:#DDE9FF}
+.ph .who{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.ph .who b{font-weight:700;display:flex;align-items:center;gap:4px}
+.ph .who span{font-size:12.5px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ver.s{width:14px;height:14px}
+.pscroll{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:18px;min-height:0}
+.cm{display:grid;grid-template-columns:34px 1fr;gap:12px}
+.cm .tx{font-size:14px;min-width:0;overflow-wrap:anywhere}
+.cm .tx b{font-weight:700;margin-right:6px}
+.cm .tx .role{display:inline-block;font:600 11px var(--f-ui);color:var(--ink-3);margin-right:6px}
+.cm .tx .auth{display:inline-block;font:700 10.5px var(--f-ui);color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent);padding:1px 6px;border-radius:5px;margin-right:6px;vertical-align:1px}
+.cm .meta{display:block;margin-top:5px;font-size:12px;color:var(--ink-3)}
+.cm .tags{color:var(--blue)}
+.cap p{margin:0 0 8px}
+.cap p:last-child{margin:0}
+.acts{border-top:1px solid var(--line);padding:8px 10px 4px;display:flex;align-items:center;gap:4px}
+.acts .ib{width:42px;height:42px}
+.acts .ib svg{width:26px;height:26px}
+.acts .ib.liked{color:var(--heart)}
+.acts .ib.liked svg{fill:var(--heart);stroke:var(--heart)}
+.acts .ib.saved svg{fill:currentColor}
+.likes{padding:0 16px 4px;font-size:13.5px}
+.likes b{font-weight:700}
+.when{padding:0 16px 12px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.addc{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding:6px 8px 6px 16px}
+.addc input{flex:1;min-width:0;border:0;background:none;outline:none;height:40px}
+.addc button{font-weight:700;color:var(--blue);padding:8px}
+.addc button:disabled{opacity:.4;cursor:default}
+
+/* stories */
+.story{position:fixed;inset:0;z-index:60;background:#0B0C10;display:flex;align-items:center;justify-content:center}
+.story[hidden]{display:none}
+.sframe{position:relative;width:min(420px,100vw);height:min(746px,100%);border-radius:12px;overflow:hidden;container-type:inline-size;background:#111}
+.sframe .slide{position:absolute;inset:0}
+.sbars{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:4px;z-index:3}
+.sbars i{flex:1;height:2.5px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.sbars i b{display:block;height:100%;width:0;background:#fff}
+.shead{position:absolute;top:22px;left:12px;right:12px;display:flex;align-items:center;gap:10px;z-index:3;color:#fff;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.shead .av{width:32px;height:32px}
+.shead span{font-weight:500;opacity:.75;font-size:13px}
+.shead .sp{flex:1}
+.shead button{color:#fff;width:36px;height:36px;display:grid;place-items:center}
+.shead button svg{width:24px;height:24px}
+.stap{position:absolute;top:70px;bottom:0;width:38%;z-index:2}
+.stap.l{left:0}.stap.r{right:0;width:62%}
+.story .art{padding:24cqw 9cqw 12cqw}
+
+/* DM */
+.dm{position:fixed;inset:0;z-index:70;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:20px}
+.dm[hidden]{display:none}
+.dmbox{width:min(460px,100%);max-height:min(680px,100%);background:var(--bg);border-radius:16px;display:flex;flex-direction:column;overflow:hidden}
+.dmh{display:flex;align-items:center;gap:12px;padding:14px 12px 14px 16px;border-bottom:1px solid var(--line)}
+.dmh .who{flex:1;display:flex;flex-direction:column;line-height:1.25}
+.dmh .who b{display:flex;align-items:center;gap:4px}
+.dmh .who span{font-size:12.5px;color:var(--ink-2)}
+.dmbody{padding:18px 16px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1}
+.bub{max-width:80%;padding:10px 14px;border-radius:20px;background:var(--btn);font-size:14.5px;align-self:flex-start}
+.bub.me{align-self:flex-end;background:var(--blue);color:#fff}
+.dmnote{font-size:12.5px;color:var(--ink-3);text-align:center;padding:4px 10px}
+.dmnote b{color:var(--ink-2);user-select:all}
+.dmf{border-top:1px solid var(--line);padding:12px;display:flex;flex-direction:column;gap:10px}
+.dmf textarea{width:100%;border:1px solid var(--line);border-radius:20px;padding:10px 14px;background:var(--bg);resize:none;min-height:84px;outline:none}
+.dmf textarea:focus{border-color:var(--ink-3)}
+.dmf .row{display:flex;gap:8px;flex-wrap:wrap}
+
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:#1C212C;color:#F2F4F8;padding:12px 18px;border-radius:12px;font-weight:500;z-index:90;transition:transform .3s;max-width:calc(100% - 32px);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.toast a{color:#8FB7FF;font-weight:700}
+
+@media (max-width:735px){
+  .cover{border-radius:16px;margin-bottom:12px}
+  .cv-photo{right:-10%;height:104%}
+  .ring{margin-top:-46px;box-shadow:0 0 0 4px var(--bg)}
+  .cv-videne{top:46%;width:64%}
+  .cv-george{width:56%;top:21%}
+  .cv-tag{top:8%;padding:5px 9px}
+  .top-in{height:54px}
+  .sbox{display:none}
+  .wrap{padding-block:18px 50px}
+  .prof{grid-template-columns:96px 1fr;gap:18px;padding-bottom:20px}
+  .ring{width:96px;height:96px;padding:3px}
+  .ring span{padding:3px}
+  .uname{font-size:18px}
+  .stats{gap:18px;font-size:13.5px}
+  .stats li{display:flex;flex-direction:column;line-height:1.2}
+  .bio{grid-column:1/-1}
+  .pinfo{display:contents}
+  .urow{grid-column:2}
+  .stats{grid-column:2}
+  .bio{grid-column:1/-1;margin-top:-4px}
+  .urow .btns{grid-column:1/-1}
+  .hl{gap:16px;padding-bottom:18px}
+  .hli{width:68px;font-size:11.5px}
+  .hlc{width:64px;height:64px}
+  .hlc svg{width:24px;height:24px}
+  .tabs{gap:0;justify-content:space-around}
+  .tab span{display:none}
+  .tab svg{width:22px;height:22px;stroke-width:1.9}
+  .grid{gap:2px}
+  .tile .ov{display:none}
+  .modal{padding:0;align-items:stretch}
+  .post{display:flex;flex-direction:column;max-height:none;height:100%;border-radius:0;overflow-y:auto;width:100%}
+  .post>*,.post .side>*{flex:none}
+  .post .ph{order:-1}
+  .side{display:contents}
+  .car{max-height:none}
+  .pscroll{overflow:visible;flex:none}
+  .car{flex:none;width:100%}
+  .mnav{display:none}
+  .mclose{top:calc(env(safe-area-inset-top,0px) + 8px);right:8px;width:38px;height:38px;border-radius:50%;background:var(--bg);color:var(--ink);z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+  .mclose svg{width:22px;height:22px}
+  .ph{padding-right:56px}
+  .sframe{border-radius:0;height:100%}
+}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.track{transition:none}.toast{transition:none}.bigheart.go{animation:none}}
+</style>
+
+<header class="top"><div class="top-in">
+  <a class="brand" href="#" id="home" aria-label="Feedfolio, înapoi la profil"><i aria-hidden="true"></i><span>feedfolio</span></a>
+  <span class="sp"></span>
+  <label class="sbox"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input id="q" type="search" placeholder="Caută: AI, Black Friday, Moët…" autocomplete="off"></label>
+  <button class="ib" type="button" id="searchBtn" aria-label="Caută"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
+  <button class="ib" type="button" data-dm aria-label="Mesaje"><svg class="i" viewBox="0 0 24 24"><path d="M21 4 3 11l7 2.5L12.5 21 21 4Z"/><path d="m10 13.5 4.5-4.5"/></svg><span class="dot" aria-hidden="true"></span></button>
+</div></header>
+
+<main class="wrap">
+  <section class="cover" aria-label="George Videne">
+    <img class="cv-george" src="assets/george-word.svg" alt="">
+    <img class="cv-videne" src="assets/videne-wordmark.svg" alt="George Videne">
+    <img class="cv-photo" src="assets/george-duotone.webp" alt="" width="1400" height="1400">
+    <span class="cv-tag">Digital Creative Strategist</span>
+  </section>
+  <section class="prof" aria-label="Profil">
+    <span class="ring" role="button" tabindex="0" data-story="contact" aria-label="Deschide povestea de contact"><span><img id="avatar" alt="George Videne"></span></span>
+    <div class="pinfo">
+      <div class="urow"><span class="uname">george.videne <svg class="ver" viewBox="0 0 24 24" aria-label="Profil verificat"><path fill="var(--blue)" d="M12 1.5l2.4 1.7 2.9-.2 1 2.7 2.5 1.5-.6 2.9 1.3 2.6-2 2.1-.2 2.9-2.8.8-1.6 2.4-2.9-.6-2.6 1.3-2.1-2-2.9-.2-.8-2.8L1.9 15l.6-2.9L1.2 9.5l2-2.1.2-2.9 2.8-.8L7.8 1.3l2.9.6z"/><path d="m8 12.3 2.6 2.6L16.2 9.3" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="btns"><button class="btn pri" type="button" id="follow">Urmărește</button><button class="btn" type="button" data-dm>Mesaj</button><a class="btn" href="george-videne-cv.pdf" target="_blank" rel="noopener">CV PDF</a></div></div>
+      <ul class="stats"><li><b>15</b> postări</li><li><b>30+</b> branduri</li><li><b id="yrs">12</b> ani în digital</li></ul>
+      <div class="bio">
+        <span class="nm"><img class="wm wm-l" src="assets/george-videne-wordmark.svg" alt="George Videne"><img class="wm wm-d" src="assets/george-videne-wordmark-white.svg" alt=""></span>
+        <span class="cat">Digital Creative Strategist · București</span>
+        <span>Construiesc punți între o idee bună și omul care trebuie să o vadă.</span>
+        <span>Concept creativ · eCommerce · AI în workflow</span>
+        <span>Ex McCann, Saatchi &amp; Saatchi, De Silva Exclusiv. Acum: Spring.</span>
+        <a class="lnk" href="https://videne.memorabil.ro" target="_blank" rel="noopener">videne.memorabil.ro</a>
+      </div>
+    </div>
+  </section>
+  <nav class="hl" id="hl" aria-label="Povești evidențiate"></nav>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab="posts"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 9.2h17M3.5 14.8h17M9.2 3.5v17M14.8 3.5v17"/></svg><span>Postări</span></button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="brands"><svg class="i" viewBox="0 0 24 24"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1L21 11.9 12.9 20z"/><circle cx="8" cy="8" r="1.4"/></svg><span>Branduri</span></button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="saved"><svg class="i" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-6-4.5-6 4.5z"/></svg><span>Salvate</span></button>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Postare">
+  <button class="mclose" type="button" data-close aria-label="Închide"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="mnav l" type="button" id="prevPost" aria-label="Postarea anterioară"><svg class="i" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+  <button class="mnav r" type="button" id="nextPost" aria-label="Postarea următoare"><svg class="i" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+  <article class="post" id="post"></article>
+</div>
+
+<div class="story" id="story" hidden role="dialog" aria-modal="true" aria-label="Poveste">
+  <div class="sframe" id="sframe"></div>
+</div>
+
+<div class="dm" id="dm" hidden role="dialog" aria-modal="true" aria-label="Mesaj către George">
+  <form class="dmbox" id="dmform">
+    <div class="dmh"><span class="av"><img id="dmav" alt=""></span><div class="who"><b>george.videne <svg class="ver s" viewBox="0 0 24 24"><use href="#verpath"/></svg></b><span>De obicei răspunde în aceeași zi</span></div><button class="ib" type="button" data-close-dm aria-label="Închide"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="dmbody" id="dmbody">
+      <div class="bub">Salut! Mersi că ai trecut pe profil 👋</div>
+      <div class="bub">Feedfolio e doar CV-ul meu deghizat în rețea socială, așa că mesajele ajung la mine pe e-mail. Scrie aici, apoi copiază mesajul sau deschide-l în aplicația ta de mail.</div>
+      <p class="dmnote">Adresa mea: <b class="em"></b></p>
+    </div>
+    <div class="dmf">
+      <label for="dmtext" style="position:absolute;left:-9999px">Mesajul tău</label>
+      <textarea id="dmtext" placeholder="Scrie un mesaj…"></textarea>
+      <div class="row"><button class="btn pri" type="submit">Copiază mesajul</button><a class="btn" id="mailto" href="#" target="_blank" rel="noopener">Deschide în aplicația de mail</a></div>
+    </div>
+  </form>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+const HEAD='assets/avatar.webp';
+const DUO='assets/george-duotone.webp';
+const EMAIL=['videne','proton.me'].join('@');
+const LINKEDIN='https://www.linkedin.com/in/georgevidene/';
+const YEARS=new Date().getFullYear()-2014;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store={get(k,d){try{const v=localStorage.getItem('feedfolio.'+k);return v?JSON.parse(v):d;}catch(e){return d;}},set(k,v){try{localStorage.setItem('feedfolio.'+k,JSON.stringify(v));}catch(e){}}};
+
+/* palette for artwork (fixed, theme-independent) */
+const C={blue:['#0A62E8','#FFFFFF'],pink:['#E06BCD','#2E0828'],ink:['#151B28','#F4F6FB'],cream:['#F4EEE2','#151B28'],lilac:['#D8CBFF','#22104D'],lime:['#C6F157','#132006'],green:['#14774A','#F2FFF7'],sand:['#EAD7B8','#36260F'],sky:['#CDE2FF','#0A2858'],coral:['#FF8662','#33100A'],night:['#1C1D29','#FAF8F4']};
+const LIGHT=['cream','lilac','lime','sand','sky','coral','pink'];
+
+/* ---------- content ---------- */
+const P=[
+ {id:'start',pin:true,bg:'blue',loc:'București',date:'Începe aici',
+  cover:{kind:'photo',big:'60s',lab:'George în 60 de secunde',k:'Începe aici'},
+  slides:[
+   {kind:'photo',k:'Începe aici',big:'Salut!',lab:'Sunt George. Glisează pentru varianta de 60 de secunde →'},
+   {kind:'stats',h:'Pe scurt',items:[[String(YEARS),'ani în digital'],['30+','branduri'],['8','agenții și companii'],['6','unelte AI zilnic']]},
+   {kind:'list',h:'La ce sunt cel mai bun',items:['<b>Concept creativ</b>: campanii, copy și materiale grafice','<b>Social media</b> și campanii integrate','<b>eCommerce</b>: landing pages, newsletter, checkout','<b>AI</b> în fiecare etapă a muncii']},
+   {kind:'quote',q:'Îmi place marketingul care nu doar arată bine. Trebuie să miște ceva: un KPI, un produs sau măcar o sprânceană.',a:'George'},
+   {kind:'cta',h:'Ce caut',p:'Echipe și proiecte în care creativitatea, digitalul și AI-ul lucrează împreună.',btn:'Scrie-mi un mesaj'}
+  ],
+  cap:['Digital Creative Strategist din București, cu '+YEARS+' ani în digital și experiență de ambele părți ale mesei: agenții ca McCann, Saatchi & Saatchi și De Silva Exclusiv, iar acum la brand, la Spring.','Glisează pentru varianta de 60 de secunde. Restul profilului e pentru cine vrea detaliile.'],
+  tags:'#CV #DigitalCreativeStrategist #București',
+  comments:[['ai','Rezumat: '+YEARS+' ani în digital, în agenție și la brand. Concept creativ, social media, eCommerce și AI. Peste 30 de branduri.']]},
+ {id:'ai',pin:true,bg:'night',loc:'Spring · București',date:'Acum',
+  cover:{kind:'title',k:'AI Lab',t:'Am un coleg nou. Se numește AI.'},
+  slides:[
+   {kind:'cover',k:'AI Lab',t:'Am un coleg nou. Se numește AI.',f:'6 unelte, zilnic →',bar:true},
+   {kind:'list',h:'Trusa mea AI',items:['<b>Claude</b>: texte lungi, landing pages, cod','<b>ChatGPT</b>: idei rapide și variante de copy','<b>Gemini</b>: research și a doua opinie','<b>NotebookLM</b>: sinteze din documente lungi','<b>ElevenLabs</b>: voice-over','<b>InVideo</b>: video din prompturi']},
+   {kind:'list',h:'Ce construiesc singur',items:['Landing page-uri, mult mai repede','Mini-aplicații pentru sarcinile zilnice','Automatizări pentru munca repetitivă','Dashboarduri: ce merge și ce nu']},
+   {kind:'prompt',h:'Cum arată un prompt bun',pr:'<em>Rol:</em> copywriter pentru o rețea de farmacii\n<em>Context:</em> campanie de toamnă despre imunitate, public 30–55 ani\n<em>Sarcină:</em> 5 subiecte de newsletter, max. 45 de caractere\n<em>Ton:</em> cald, util, fără promisiuni medicale\n<em>Format:</em> listă, apoi alege-l pe cel mai bun'},
+   {kind:'quote',q:'Un prompt bun e tot un brief bun. Iar brief-uri scriu de '+YEARS+' ani.',a:'George'}
+  ],
+  cap:['În ultima vreme, munca mea la Spring s-a schimbat mai mult decât în toți anii dinainte. Folosesc zilnic șase unelte AI, ca pe o echipă în care fiecare are rolul lui.','Cea mai mare schimbare: am început să-mi construiesc singur uneltele de lucru. AI-ul accelerează munca, iar decizia rămâne la mine.'],
+  tags:'#AI #PromptWriting #Automatizări',
+  comments:[['2012','Pe vremea mea, „automatizare” însemna un template salvat în Word. Bravo, omule. Doar să nu uiți cum se scrie un titlu bun de mână.','Copywriter Executive'],['ai','Rezumat: șase unelte AI zilnic pentru text, voce și video, prompturi structurate și unelte construite singur.']]},
+ {id:'spring',bg:'pink',loc:'Spring · Farmacia La Preț Mic',date:'aug 2022 – prezent',
+  cover:{kind:'title',k:'2022 → azi',t:'Partea creativă a unei farmacii'},
+  slides:[
+   {kind:'cover',k:'Spring · 2022 → azi',t:'Partea creativă a unei farmacii',f:'Digital Marketing Specialist'},
+   {kind:'text',h:'Ce fac',p:'Gândesc conceptele campaniilor și realizez materialele grafice de promovare, de la idee și copy până la vizualul final, ca textul și imaginea să spună aceeași poveste.'},
+   {kind:'steps',h:'Black Friday, în 5 straturi',items:[['Ideea mare','un fir care ține săptămâni întregi'],['Key visual și copy','identitatea campaniei'],['Declinarea','postări, bannere, newsletter, landing'],['Ritmul','teaser, lansare, ultima șansă'],['Execuția','brief-uri, verificări, ajustări']]},
+   {kind:'text',h:'Checkout-ul',p:'Am făcut designul checkout-ului din site. Un checkout bun e cel pe care clientul aproape nu-l observă: pași puțini, informații clare și niciun motiv de ezitare.'},
+   {kind:'list',h:'Și zilnic',items:['Social media și newsletter','Landing pages','Agențiile media: Meta și Google Ads','AI în aproape fiecare etapă']}
+  ],
+  cap:['După ani buni în agenții, am trecut în echipa brandului. La Spring am grijă ca fiecare mesaj al farmaciei să arate și să sune bine, de la prima idee de campanie până la ultimul banner.','Asta include campaniile mari ale anului, ca Black Friday, unde un singur concept ține împreună zeci de materiale, pe toate canalele.'],
+  tags:'#ConceptCreativ #BlackFriday #eCommerce',
+  comments:[['2015','Deci acum tu scrii brief-urile pe care le primeam eu? Fii blând cu account-ul. Știi din experiență cât contează un brief clar.','Account Manager la Tuio'],['me','Partea mea preferată: momentul în care un concept bun face ca toate materialele să sune ca o singură voce.']]},
+ {id:'desilva',bg:'cream',loc:'De Silva Exclusiv · București',date:'mai 2017 – iul 2022',
+  cover:{kind:'quote',k:'2017 – 2022',q:'Cinci ani în care luxul s-a spus în șoaptă.'},
+  slides:[
+   {kind:'cover',k:'De Silva Exclusiv · 2017–2022',t:'Cinci ani în care luxul s-a spus în șoaptă',f:'Digital Marketing / Social Media Manager'},
+   {kind:'quote',q:'Moët cere eleganță. Perrier cere prospețime. Leibniz cere căldură.',a:'Lecția portofoliului premium'},
+   {kind:'list',h:'Ce am făcut',items:['Site-ul De Silva Exclusiv','Conceptul catalogului de prezentare','Social media pentru 14 branduri','Calendare editoriale și ton per brand']},
+   {kind:'chips',h:'14 branduri',items:['Moët','Belvedere','Perrier','Vittel','San Benedetto','Ritter Sport','Loacker','Dallmayr','Leibniz','HARIBO','Corny','King Oscar','Maille','Ramada North']}
+  ],
+  cap:['Cel mai lung capitol de până acum. Branduri cu istorie lungă și standarde pe măsură: șampanie, ape minerale, ciocolată, cafea, muștar de Dijon.','Dincolo de branduri, am lucrat și pentru casa care le aduce în România: site-ul companiei și catalogul ei de prezentare.'],
+  tags:'#Premium #SocialMedia #Branding',
+  comments:[['me','Ce am păstrat de aici: un brand premium crește prin consecvență, zi de zi. Primul rezultat rar e cel final.']]},
+ {id:'mccann',bg:'coral',loc:'McCann Worldgroup · București',date:'sep 2016 – mai 2017',
+  cover:{kind:'big',big:'9',lab:'luni la McCann',k:'2016 – 2017'},
+  slides:[
+   {kind:'cover',k:'McCann Worldgroup · 2016–2017',t:'Ce m-a învățat McCann în 9 luni',f:'Social Media Manager'},
+   {kind:'text',h:'Procese mari, echipe mari',p:'Am gestionat social media într-un mediu în care fiecare idee trece prin strategie, creație și client înainte să ajungă pe ecran. Aici am învățat cum păstrezi o idee vie pe tot drumul.'},
+   {kind:'quote',q:'Disciplina de proces de aici o folosesc și azi, de partea brandului.',a:'George'}
+  ],
+  cap:['Nouă luni într-una dintre cele mai mari rețele de comunicare din lume. Standarde pe care le simți în fiecare livrabil.'],
+  tags:'#Agenție #SocialMedia',comments:[]},
+ {id:'frank',bg:'lime',loc:'Frank Group · București',date:'mai – sep 2016',
+  cover:{kind:'title',k:'Vara lui 2016',t:'Aperol, Campari și Johnnie Walker pe același ecran'},
+  slides:[
+   {kind:'cover',k:'Frank Group · 2016',t:'O vară cu Aperol, Campari și Johnnie Walker',f:'Social Media Manager'},
+   {kind:'text',h:'Lecția verii',p:'Treceam în aceeași zi de la tonul relaxat al unui beach bar la seriozitatea unui brand IT. Un social media manager bun schimbă registrul fără să-și piardă vocea.'},
+   {kind:'chips',h:'9 conturi în paralel',items:['Johnnie Walker','Jose Cuervo','Aperol','Campari','J&B','Luxoft','Durex','Tazovsky','The Deck Beach Bar']}
+  ],
+  cap:['Un sezon intens, cu spirtoase iconice lângă tehnologie și lifestyle.'],
+  tags:'#SocialMedia #ToneOfVoice',
+  comments:[['2016','Notă pentru viitor: tonul de beach bar nu merge pe pagina Luxoft. Verificat. De două ori.','Social Media Manager']]},
+ {id:'tuio',bg:'sky',loc:'Tuio · București',date:'mai 2015 – mai 2016',
+  cover:{kind:'title',k:'2015 – 2016',t:'Meseria, de la brief până la raport'},
+  slides:[
+   {kind:'cover',k:'Tuio · 2015–2016',t:'Meseria, de la brief până la raport',f:'Account Manager'},
+   {kind:'steps',h:'Tot ciclul unei campanii',items:[['Brief','nevoia clientului, tradusă'],['Concept și buget','alături de echipa creativă'],['Copy','postările, scrise de mine'],['Aprobare','prezentare și negociere'],['Raport','rezultate și ajustări']]},
+   {kind:'chips',h:'9 clienți',items:['HARIBO','Superbet','Ștefan Bănică','Vacamuuu','Ramada Sibiu','Steaua Baschet','M1','Atlassib','BTT']}
+  ],
+  cap:['Anul în care am învățat meseria de la cap la coadă și să vorbesc în aceeași zi limba clientului și pe cea a echipei creative.'],
+  tags:'#AccountManagement #Campanii',
+  comments:[['me','Abilitatea asta contează și mai mult acum, când „echipa” include și unelte AI care au nevoie de brief-uri la fel de clare.']]},
+ {id:'catalyst',bg:'sand',loc:'Catalyst · Angajatori de Top',date:'oct 2014',
+  cover:{kind:'title',k:'Oct 2014',t:'O lună în employer branding',s:true},
+  slides:[
+   {kind:'cover',k:'Catalyst · 2014',t:'O lună în employer branding',f:'Account Manager'},
+   {kind:'text',h:'Ce am luat de aici',p:'Am văzut cum își construiesc companiile imaginea în fața viitorilor angajați. Brandul de angajator cere aceeași grijă ca brandul de produs.'}
+  ],
+  cap:['Un sprint scurt și util prin Angajatori de Top.'],tags:'#EmployerBranding',comments:[]},
+ {id:'saatchi',bg:'ink',loc:'Saatchi & Saatchi · București',date:'sep 2014',
+  cover:{kind:'title',k:'Sep 2014',t:'O lună în casa unei legende',s:true},
+  slides:[
+   {kind:'cover',k:'Saatchi & Saatchi · 2014',t:'O lună în casa unei legende a publicității',f:'Internship'},
+   {kind:'text',h:'Din interior',p:'Am văzut cum se nasc ideile mari și câtă muncă stă în spatele unei campanii care pare simplă.'}
+  ],
+  cap:['Un internship scurt într-o agenție al cărei nume îl știe toată industria.'],tags:'#Publicitate',
+  comments:[['2014','Am văzut cum arată o idee mare înainte să devină mare. De atunci nu mai subestimez nicio primă schiță.','Intern']]},
+ {id:'kaleido',bg:'lilac',loc:'Kaleidoscope Proximity',date:'mai – aug 2014',
+  cover:{kind:'title',k:'2014',t:'Primul meu „Publică”'},
+  slides:[
+   {kind:'cover',k:'Kaleidoscope Proximity · 2014',t:'Primul meu „Publică”',f:'Social Media Intern'},
+   {kind:'text',h:'Unde a devenit meserie',p:'Primul birou de agenție, primul calendar de postări, primul click pe „Publică”. Patru luni în care curiozitatea de student a devenit meserie.'}
+  ],
+  cap:['Prima dată când am lucrat în social media la nivel profesional.'],tags:'#PrimulJob',
+  comments:[['me','De la primul calendar de postări la peste 30 de branduri și o trusă întreagă de unelte AI. Totul a pornit de aici.']]},
+ {id:'aiesec',bg:'blue',loc:'AIESEC Bucharest',date:'iul 2013 – iun 2014',
+  cover:{kind:'big',big:'3',lab:'roluri într-un an',k:'AIESEC'},
+  slides:[
+   {kind:'cover',k:'AIESEC · 2013–2014',t:'Un an, trei roluri și prima echipă condusă',f:'Team Leader / Brand Manager'},
+   {kind:'steps',h:'Trei roluri',items:[['External Relations','6 parteneri, 15 întâlniri'],['Marketing','canalele online și vizualurile campaniei'],['Team Leader / Brand Manager','echipă de 4, strategie de brand']]},
+   {kind:'stats',h:'Prima negociere',items:[['15','întâlniri'],['1','contract semnat']]}
+  ],
+  cap:['Am intrat pe relații externe și am ieșit coordonând brandul programului internațional de voluntariat. Pe drum, am ajuns să stăpânesc Photoshop foarte bine.'],
+  tags:'#Leadership #Voluntariat',
+  comments:[['2013','15 întâlniri, un contract semnat. Atunci mi s-a părut puțin. Acum știu că a fost prima lecție despre răbdare în negociere.','External Relations']]},
+ {id:'usase',bg:'pink',loc:'USASE · Uniunea Studenților ASE',date:'mar – nov 2013',
+  cover:{kind:'title',k:'2013',t:'Evenimente cu energie de festival',s:true},
+  slides:[
+   {kind:'cover',k:'USASE · 2013',t:'Evenimente studențești cu energie de festival',f:'Marketing Officer'},
+   {kind:'text',h:'Event marketing',p:'Cum aduci oamenii în sală, cum faci un afiș să fie văzut pe un hol plin și cum transformi un eveniment într-o poveste pe care o spun și alții.'}
+  ],
+  cap:['Nouă luni de marketing de evenimente în Uniunea Studenților ASE.'],tags:'#Evenimente',comments:[]},
+ {id:'advice',bg:'cream',loc:'ADVICE Students',date:'nov 2012 – mar 2013',
+  cover:{kind:'quote',k:'2012',q:'Primul text scris pentru un brand.'},
+  slides:[
+   {kind:'cover',k:'ADVICE Students · 2012',t:'Primul text scris pentru un brand',f:'Copywriter Executive'},
+   {kind:'quote',q:'Un prompt bun e tot un brief bine scris. Copywritingul a rămas fundația.',a:'George, azi'}
+  ],
+  cap:['Primul rol, primele cuvinte. Aici am descoperit plăcerea de a găsi formularea exactă, care spune mult în puțin spațiu.'],tags:'#Copywriting',comments:[]},
+ {id:'ase',bg:'green',loc:'ASE București',date:'2012 – 2015',
+  cover:{kind:'title',k:'Licență · Marketing',t:'Teoria în amfiteatru, practica în paralel',s:true},
+  slides:[
+   {kind:'cover',k:'ASE București · 2012–2015',t:'Teoria în amfiteatru, practica în paralel',f:'Licență în Marketing'},
+   {kind:'text',h:'Teren de testare',p:'În aceiași ani am lucrat în AIESEC, în asociații studențești și în primele agenții, așa că fiecare curs avea imediat un teren de testare.'}
+  ],
+  cap:['Am studiat Marketing la Academia de Studii Economice din București.'],tags:'#ASE #Marketing',comments:[]},
+ {id:'colegiu',bg:'sand',loc:'Colegiul Economic Buzău',date:'2008 – 2012',
+  cover:{kind:'big',big:'2008',lab:'Unde a început totul',k:'Buzău'},
+  slides:[
+   {kind:'cover',k:'Buzău · 2008–2012',t:'Unde a început totul',f:'Profil Marketing'},
+   {kind:'text',h:'Fundația',p:'Marketingul a fost alegerea încă de la liceu: economie, comerț și primele noțiuni de marketing. De aici a pornit drumul spre București.'}
+  ],
+  cap:['Colegiul Economic Buzău, profil Marketing.'],tags:'#Începuturi',
+  comments:[['me','Dacă mi-ar fi spus cineva în 2008 că o să lucrez cu unelte care scriu, vorbesc și fac video la comandă, n-aș fi crezut. Bine că am ales marketingul.']]}
+];
+const BYID=Object.fromEntries(P.map(p=>[p.id,p]));
+
+const ICO={
+ ai:'<path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M10 14.5 12 9.5l2 5M10.6 13h2.8"/>',
+ tag:'<path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1L21 11.9 12.9 20z"/><circle cx="8" cy="8" r="1.4"/>',
+ cart:'<path d="M3 4h2.5l2.2 10.5h10.6L20.5 7H7"/><circle cx="9.5" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/>',
+ star:'<path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/>',
+ bolt:'<path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/>',
+ globe:'<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5S14.6 18.1 12 20.5M12 3.5C9.4 5.9 8.2 8.7 8.2 12s1.2 6.1 3.8 8.5"/>',
+ mail:'<rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/>'
+};
+const H=[
+ {id:'ai',name:'AI Lab',ico:'ai',bg:'night',slides:[
+   {kind:'cover',k:'AI Lab',t:'6 unelte AI. Zilnic.',f:'Atinge pentru următoarea →',bar:true},
+   {kind:'list',h:'Trusa',items:['<b>Claude</b>: texte, landing pages, cod','<b>ChatGPT</b>: idei și variante','<b>Gemini</b>: research','<b>NotebookLM</b>: sinteze','<b>ElevenLabs</b>: voce','<b>InVideo</b>: video']},
+   {kind:'list',h:'Construiesc singur',items:['Landing page-uri','Mini-aplicații','Automatizări','Dashboarduri']},
+   {kind:'quote',q:'Un prompt bun e tot un brief bun.',a:'George'}]},
+ {id:'bf',name:'Black Friday',ico:'tag',bg:'pink',slides:[
+   {kind:'cover',k:'Black Friday',t:'Fără încă un banner cu -50%',f:'5 straturi →'},
+   {kind:'text',h:'1 · Ideea mare',p:'Un fir creativ care ține câteva săptămâni și zeci de materiale fără să obosească.'},
+   {kind:'text',h:'2 · Key visual și copy',p:'Vizualul principal, mesajele cheie și tonul, gândite împreună de la început.'},
+   {kind:'text',h:'3 · Declinarea',p:'Postări și stories, bannere, newslettere, landing page și reclame Meta și Google.'},
+   {kind:'text',h:'4 · Ritmul',p:'Teaser, lansare, reamintiri și ultima șansă, fiecare moment cu mesajul lui.'},
+   {kind:'text',h:'5 · Execuția',p:'Brief-uri pentru agenție, verificarea materialelor și ajustări din mers.'},
+   {kind:'quote',q:'Partea mea preferată: când toate materialele sună ca o singură voce.',a:'George'}]},
+ {id:'checkout',name:'Checkout',ico:'cart',bg:'sky',slides:[
+   {kind:'cover',k:'UX · Spring',t:'Checkout-ul pe care nu-l observi',f:'→'},
+   {kind:'list',h:'Un checkout bun',items:['Pași puțini','Informații clare','Niciun motiv de ezitare','De la coș la comandă, fără ocolișuri']},
+   {kind:'quote',q:'Aici se întâlnesc cele două lucruri care îmi plac cel mai mult: designul și UX-ul.',a:'George'}]},
+ {id:'brands',name:'Branduri',ico:'star',bg:'cream',slides:[
+   {kind:'cover',k:'Portofoliu',t:'30+ branduri, fiecare cu vocea lui',f:'→'},
+   {kind:'chips',h:'De Silva Exclusiv',items:['Moët','Belvedere','Perrier','Vittel','San Benedetto','Ritter Sport','Loacker','Dallmayr','Leibniz','HARIBO','Corny','King Oscar','Maille','Ramada North']},
+   {kind:'chips',h:'Frank Group',items:['Johnnie Walker','Jose Cuervo','Aperol','Campari','J&B','Luxoft','Durex','Tazovsky','The Deck Beach Bar']},
+   {kind:'chips',h:'Tuio și Spring',items:['HARIBO','Superbet','Ștefan Bănică','Vacamuuu','Ramada Sibiu','Steaua Baschet','M1','Atlassib','BTT','Spring']}]},
+ {id:'skills',name:'Superputeri',ico:'bolt',bg:'lime',slides:[
+   {kind:'cover',k:'Superputeri',t:'Ce aduc într-o echipă',f:'→'},
+   {kind:'list',h:'Creație',items:['Concept creativ și key visual','Copywriting','Materiale grafice de promovare','Design Thinking și UX/UI']},
+   {kind:'list',h:'Digital',items:['Social media și comunitate','Newsletter și e-mail','Landing pages și checkout','Paid media: Meta și Google Ads','AI și prompt writing']}]},
+ {id:'langs',name:'Limbi',ico:'globe',bg:'lilac',slides:[
+   {kind:'list',h:'Trei limbi',items:['<b>Română</b>: nativ','<b>Engleză</b>: profesional','<b>Franceză</b>: noțiuni de bază']}]},
+ {id:'contact',name:'Contact',ico:'mail',bg:'blue',slides:[
+   {kind:'photo',k:'Contact',big:'Hai!',lab:'Să lucrăm împreună'},
+   {kind:'cta',h:'Unde mă găsești',p:EMAIL+'\nlinkedin.com/in/georgevidene\nvidene.memorabil.ro',btn:'Scrie-mi un mesaj'}]}
+];
+const HBYID=Object.fromEntries(H.map(h=>[h.id,h]));
+
+const BRANDS=[['Spring Farma','spring'],['Moët','desilva'],['Belvedere','desilva'],['Perrier','desilva'],['Vittel','desilva'],['San Benedetto','desilva'],['Ritter Sport','desilva'],['Loacker','desilva'],['Dallmayr','desilva'],['Leibniz','desilva'],['HARIBO','desilva'],['Corny','desilva'],['King Oscar','desilva'],['Maille','desilva'],['Ramada North','desilva'],['Johnnie Walker','frank'],['Jose Cuervo','frank'],['Aperol','frank'],['Campari','frank'],['J&B','frank'],['Luxoft','frank'],['Durex','frank'],['Tazovsky','frank'],['The Deck Beach Bar','frank'],['Superbet','tuio'],['Ștefan Bănică','tuio'],['Vacamuuu','tuio'],['Ramada Sibiu','tuio'],['Steaua Baschet','tuio'],['M1','tuio'],['Atlassib','tuio'],['BTT','tuio']];
+
+/* ---------- artwork ---------- */
+function art(s,bg,isCover){
+  const [b,f]=C[bg]; const lt=LIGHT.includes(bg);
+  let in_='';
+  const deco=`<span class="deco ${bg.length%2?'sq':''}"></span>`;
+  if(s.kind==='photo'){ in_=`<img src="${DUO}" alt="" style="position:absolute;right:-22cqw;bottom:0;height:82%;width:auto;-webkit-mask-image:linear-gradient(90deg,transparent 6%,#000 30%);mask-image:linear-gradient(90deg,transparent 6%,#000 30%)"><div style="position:relative;display:flex;flex-direction:column;gap:3cqw"><span class="k">${esc(s.k||'')}</span><div class="big" style="font-size:21cqw;margin-top:2cqw">${esc(s.big||'')}</div><div class="lab" style="max-width:44cqw;font-size:5.6cqw;line-height:1.2">${esc(s.lab||'')}</div></div>`; return `<div class="art" style="background:${b};color:${f};justify-content:flex-start">${in_}</div>`; }
+  if(s.kind==='big'){ in_=`<span class="k">${esc(s.k||'')}</span><div><div class="big">${esc(s.big)}</div><div class="lab">${esc(s.lab)}</div></div><span></span>`; }
+  else if(s.kind==='title'||s.kind==='cover'){ in_=`<span class="k">${esc(s.k||'')}</span><div class="t ${s.s?'s':''}">${esc(s.t)}</div><div class="f"><span>${esc(s.f||'')}</span>${s.bar?'<span class="gbar"></span>':''}</div>`; }
+  else if(s.kind==='quote'){ in_=`<span class="k">${esc(s.k||'')}</span><div class="q">„${esc(s.q.replace(/[„”"]/g,''))}”</div><div class="f"><span>${esc(s.a||'')}</span></div>`; }
+  else if(s.kind==='text'){ in_=`<div class="h">${esc(s.h)}</div><div class="p">${esc(s.p)}</div><span></span>`; }
+  else if(s.kind==='list'){ in_=`<div class="h">${esc(s.h)}</div><ul>${s.items.map(x=>`<li><span>${x}</span></li>`).join('')}</ul><span></span>`; }
+  else if(s.kind==='chips'){ in_=`<div class="h">${esc(s.h)}</div><div class="chips">${s.items.map(x=>`<span>${esc(x)}</span>`).join('')}</div><span></span>`; }
+  else if(s.kind==='stats'){ in_=`<div class="h">${esc(s.h)}</div><div class="stg">${s.items.map(([n,l])=>`<div><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join('')}</div><span></span>`; }
+  else if(s.kind==='steps'){ in_=`<div class="h">${esc(s.h)}</div><div class="steps">${s.items.map(([t,d],i)=>`<div><i>${i+1}</i><div><b>${esc(t)}</b><span>${esc(d)}</span></div></div>`).join('')}</div><span></span>`; }
+  else if(s.kind==='prompt'){ in_=`<div class="h">${esc(s.h)}</div><div class="pr">${s.pr}</div><span></span>`; }
+  else if(s.kind==='cta'){ in_=`<div class="h">${esc(s.h)}</div><div class="p" style="white-space:pre-line">${esc(s.p)}</div><button class="cta" type="button" data-dm style="--ctab:${b}"><span>${esc(s.btn)}</span></button>`; }
+  return `<div class="art ${lt?'lt':''}" style="background:${b};color:${f}">${isCover||s.kind==='cover'||s.kind==='big'?deco:''}${in_}</div>`;
+}
+const SV=(p,cls='i')=>`<svg class="${cls}" viewBox="0 0 24 24">${p}</svg>`;
+const I_CAR='<path d="M8 3.5h11.5a1 1 0 0 1 1 1V16M4.5 7.5h11a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1z"/>';
+const I_PIN='<path d="M9 3.5h6l-1 5 3.5 3.5H6.5L10 8.5zM12 12v8.5"/>';
+const I_HEART='<path d="M12 20.3S3.5 15.4 3.5 9.2A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.5 2.2c0 6.2-8.5 11.1-8.5 11.1z"/>';
+const I_CMT='<path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4A8.4 8.4 0 1 1 20.5 11.6z"/>';
+const I_SEND='<path d="M21 4 3 11l7 2.5L12.5 21 21 4Z"/><path d="m10 13.5 4.5-4.5"/>';
+const I_SAVE='<path d="M6 3.5h12v17l-6-4.5-6 4.5z"/>';
+
+/* ---------- state ---------- */
+let liked=new Set(store.get('liked',[])), saved=new Set(store.get('saved',[])), seen=new Set(store.get('seen',[]));
+let following=store.get('follow',false), tab='posts', query='';
+
+/* ---------- profile ---------- */
+$('#avatar').src=HEAD; $('#dmav').src=HEAD; $('#yrs').textContent=YEARS;
+document.querySelectorAll('.em').forEach(e=>e.textContent=EMAIL);
+const verSvg=document.createElementNS('http://www.w3.org/2000/svg','svg'); verSvg.setAttribute('style','display:none');
+verSvg.innerHTML='<symbol id="verpath" viewBox="0 0 24 24"><path fill="var(--blue)" d="M12 1.5l2.4 1.7 2.9-.2 1 2.7 2.5 1.5-.6 2.9 1.3 2.6-2 2.1-.2 2.9-2.8.8-1.6 2.4-2.9-.6-2.6 1.3-2.1-2-2.9-.2-.8-2.8L1.9 15l.6-2.9L1.2 9.5l2-2.1.2-2.9 2.8-.8L7.8 1.3l2.9.6z"/><path d="m8 12.3 2.6 2.6L16.2 9.3" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>';
+document.body.prepend(verSvg);
+const VER='<svg class="ver s" viewBox="0 0 24 24"><use href="#verpath"/></svg>';
+function renderFollow(){ const b=$('#follow'); b.textContent=following?'Urmărești ✓':'Urmărește'; b.classList.toggle('pri',!following); b.classList.toggle('on',following); }
+renderFollow();
+function renderHL(){
+  $('#hl').innerHTML=H.map(h=>{const [b,f]=C[h.bg];return `<button class="hli ${seen.has(h.id)?'seen':''}" type="button" data-story="${h.id}"><span class="hlc"><span style="background:${b};color:${f}">${SV(ICO[h.ico])}</span></span>${esc(h.name)}</button>`;}).join('');
+}
+renderHL();
+
+/* ---------- grid ---------- */
+function hay(p){ return (p.loc+' '+p.cap.join(' ')+' '+p.tags+' '+JSON.stringify(p.slides)+' '+p.comments.map(c=>c[1]).join(' ')).toLowerCase(); }
+function tileHTML(p){
+  const multi=p.slides.length>1;
+  return `<button class="tile" type="button" data-post="${p.id}" aria-label="${esc(p.slides[0].t||p.cover.lab||'Postare')}">${art(p.cover,p.bg,true)}
+    <span class="badge">${p.pin?SV(I_PIN):multi?SV(I_CAR):''}</span>
+    <span class="ov"><span>${SV(I_HEART)} ${liked.has(p.id)?'Apreciat':'Apreciază'}</span><span>${SV(I_CMT)} ${p.comments.length+1}</span></span></button>`;
+}
+function renderGrid(){
+  const g=$('#grid'); let html='';
+  if(tab==='posts'){
+    const list=P.filter(p=>!query||hay(p).includes(query));
+    html=list.map(tileHTML).join('')||`<div class="empty"><b>Nimic găsit</b>Încearcă „AI”, „Black Friday”, „Moët” sau „2014”.</div>`;
+  } else if(tab==='brands'){
+    const list=BRANDS.filter(([n])=>!query||n.toLowerCase().includes(query));
+    const pal=['ink','cream','blue','lilac','sand','pink','sky','lime','coral','green','night'];
+    html=list.map(([n,id],i)=>{const bg=pal[i%pal.length];const via=BYID[id].loc.split(' · ')[0];return `<button class="tile" type="button" data-post="${id}" aria-label="${esc(n)}, prin ${esc(via)}">${art({kind:'title',k:'via '+via,t:n,s:n.length>12},bg,true)}</button>`;}).join('')||`<div class="empty"><b>Niciun brand găsit</b></div>`;
+  } else {
+    const list=P.filter(p=>saved.has(p.id));
+    html=list.map(tileHTML).join('')||`<div class="empty"><b>Nimic salvat încă</b>Apasă semnul de salvare de pe o postare și o găsești aici.</div>`;
+  }
+  g.innerHTML=html;
+}
+renderGrid();
+
+/* ---------- post modal ---------- */
+const modal=$('#modal'); let cur=null, si=0, lastFocus=null;
+const order=()=>P.filter(p=>!query||hay(p).includes(query));
+function avatar(kind){
+  if(kind==='me'||kind==='author') return `<span class="av"><img src="${HEAD}" alt=""></span>`;
+  if(kind==='ai') return `<span class="av" style="background:#7B3FE4">AI</span>`;
+  return `<span class="av" style="background:#A07A2C">${String(kind).slice(2)}</span>`;
+}
+function cmtHTML(c){
+  const [who,text,role]=c;
+  if(who==='me') return `<div class="cm">${avatar('me')}<div class="tx"><b>george.videne</b><span class="auth">Autor</span>${esc(text)}<span class="meta">azi</span></div></div>`;
+  if(who==='ai') return `<div class="cm">${avatar('ai')}<div class="tx"><b>rezumat.automat</b>${esc(text)}<span class="meta">pentru cine are 10 secunde</span></div></div>`;
+  return `<div class="cm">${avatar(who)}<div class="tx"><b>george.${who}</b><span class="role">${esc(role||'')}</span>${esc(text)}<span class="meta">din arhivă · ${who}</span></div></div>`;
+}
+function openPost(id,from){
+  const p=BYID[id]; if(!p) return;
+  if(modal.hidden) lastFocus=from||document.activeElement;
+  cur=p; si=0;
+  const lk=liked.has(id), sv=saved.has(id);
+  $('#post').innerHTML=`
+   <div class="car" id="car">
+     <div class="track" id="track">${p.slides.map(s=>`<div class="slide">${art(s,p.bg)}</div>`).join('')}</div>
+     <button class="carb l" type="button" id="cl" aria-label="Imaginea anterioară">${SV('<path d="m15 6-6 6 6 6"/>')}</button>
+     <button class="carb r" type="button" id="cr" aria-label="Imaginea următoare">${SV('<path d="m9 6 6 6-6 6"/>')}</button>
+     ${p.slides.length>1?`<div class="dots">${p.slides.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><span class="cnt" id="ccnt">1/${p.slides.length}</span>`:''}
+     <span class="bigheart" id="bigheart">${SV(I_HEART)}</span>
+   </div>
+   <div class="side">
+     <div class="ph"><span class="av"><img src="${HEAD}" alt=""></span><div class="who"><b>george.videne ${VER}</b><span>${esc(p.loc)}</span></div></div>
+     <div class="pscroll">
+       <div class="cm">${avatar('me')}<div class="tx cap"><b>george.videne</b>${p.cap.map((x,i)=>i?`<p>${esc(x)}</p>`:esc(x)).join('')}<p class="tags">${esc(p.tags)}</p><span class="meta">${esc(p.date)}</span></div></div>
+       ${p.comments.map(cmtHTML).join('')}
+     </div>
+     <div class="acts">
+       <button class="ib ${lk?'liked':''}" type="button" id="likeBtn" aria-pressed="${lk}" aria-label="Apreciază">${SV(I_HEART)}</button>
+       <button class="ib" type="button" id="cmtBtn" aria-label="Comentează">${SV(I_CMT)}</button>
+       <button class="ib" type="button" id="shareBtn" aria-label="Copiază linkul">${SV(I_SEND)}</button>
+       <span class="sp"></span>
+       <button class="ib ${sv?'saved':''}" type="button" id="saveBtn" aria-pressed="${sv}" aria-label="Salvează">${SV(I_SAVE)}</button>
+     </div>
+     <div class="likes" id="likes">${lk?'<b>Ți-a plăcut asta.</b> Mulțumesc!':'Atinge de două ori imaginea ca s-o apreciezi.'}</div>
+     <div class="when">${esc(p.date)}</div>
+     <form class="addc" id="addc"><label for="cin" style="position:absolute;left:-9999px">Comentariu</label><input id="cin" placeholder="Adaugă un comentariu…" autocomplete="off"><button type="submit" id="cpost" disabled>Trimite</button></form>
+   </div>`;
+  modal.hidden=false; document.body.style.overflow='hidden';
+  updCar(); bindCar();
+  const list=order(), i=list.findIndex(x=>x.id===id);
+  $('#prevPost').hidden=i<=0; $('#nextPost').hidden=i<0||i>=list.length-1;
+  try{ history.replaceState(null,'','#'+id); }catch(e){}
+  setTimeout(()=>$('#post').querySelector('.carb.r:not([hidden]),#likeBtn').focus({preventScroll:true}),30);
+}
+function updCar(){
+  const n=cur.slides.length; $('#track').style.transform=`translateX(${-si*100}%)`;
+  $('#cl').hidden=si===0; $('#cr').hidden=si>=n-1;
+  document.querySelectorAll('#car .dots i').forEach((d,i)=>d.classList.toggle('on',i===si));
+  const c=$('#ccnt'); if(c) c.textContent=`${si+1}/${n}`;
+}
+function go(d){ const n=cur.slides.length; si=Math.max(0,Math.min(n-1,si+d)); updCar(); }
+function like(on){
+  const id=cur.id; if(on===undefined) on=!liked.has(id);
+  on?liked.add(id):liked.delete(id); store.set('liked',[...liked]);
+  const b=$('#likeBtn'); b.classList.toggle('liked',on); b.setAttribute('aria-pressed',on);
+  $('#likes').innerHTML=on?'<b>Ți-a plăcut asta.</b> Mulțumesc!':'Atinge de două ori imaginea ca s-o apreciezi.';
+}
+function bindCar(){
+  const car=$('#car'); let x0=null,dx=0,lastTap=0;
+  $('#cl').onclick=()=>go(-1); $('#cr').onclick=()=>go(1);
+  car.addEventListener('pointerdown',e=>{ if(e.target.closest('button')) return; x0=e.clientX; dx=0; });
+  car.addEventListener('pointermove',e=>{ if(x0===null) return; dx=e.clientX-x0; });
+  car.addEventListener('pointerup',e=>{
+    if(x0===null) return; const moved=Math.abs(dx)>40;
+    if(moved) go(dx<0?1:-1);
+    else { const t=Date.now(); if(t-lastTap<320){ like(true); const h=$('#bigheart'); h.classList.remove('go'); void h.offsetWidth; h.classList.add('go'); lastTap=0; } else lastTap=t; }
+    x0=null;
+  });
+  $('#likeBtn').onclick=()=>like();
+  $('#saveBtn').onclick=()=>{ const id=cur.id, on=!saved.has(id); on?saved.add(id):saved.delete(id); store.set('saved',[...saved]); const b=$('#saveBtn'); b.classList.toggle('saved',on); b.setAttribute('aria-pressed',on); toast(on?'Salvat. Îl găsești în fila „Salvate”.':'Scos din „Salvate”.'); if(tab==='saved') renderGrid(); };
+  $('#cmtBtn').onclick=()=>$('#cin').focus();
+  $('#shareBtn').onclick=()=>{ const url=location.href.split('#')[0]+'#'+cur.id; try{ navigator.clipboard.writeText(url).then(()=>toast('Linkul către postare a fost copiat.'),()=>toast(url)); }catch(err){ toast(url); } };
+  $('#cin').oninput=e=>{ $('#cpost').disabled=!e.target.value.trim(); };
+  $('#addc').onsubmit=e=>{ e.preventDefault(); const v=$('#cin').value.trim(); if(!v) return; openDM(`Re: ${cur.slides[0].t||cur.cover.lab}\n\n${v}`); };
+}
+function closePost(){ modal.hidden=true; document.body.style.overflow=''; cur=null; renderGrid(); try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){} if(lastFocus) lastFocus.focus({preventScroll:true}); }
+function stepPost(d){ const list=order(), i=list.findIndex(x=>x.id===cur.id); const n=list[i+d]; if(n) openPost(n.id); }
+$('#prevPost').onclick=()=>stepPost(-1); $('#nextPost').onclick=()=>stepPost(1);
+modal.addEventListener('click',e=>{ if(e.target===modal||e.target.closest('[data-close]')) closePost(); });
+
+/* ---------- stories ---------- */
+const story=$('#story'); let sh=null, sj=0, timer=null, t0=0, paused=false, elapsed=0;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const DUR=6000;
+function openStory(id){
+  sh=HBYID[id]; if(!sh) return; sj=0; seen.add(id); store.set('seen',[...seen]); renderHL();
+  story.hidden=false; document.body.style.overflow='hidden'; drawStory();
+}
+function drawStory(){
+  const n=sh.slides.length;
+  $('#sframe').innerHTML=`<div class="slide">${art(sh.slides[sj],sh.bg,true)}</div>
+   <div class="sbars">${sh.slides.map((_,i)=>`<i><b style="width:${i<sj?100:0}%"></b></i>`).join('')}</div>
+   <div class="shead"><span class="av"><img src="${HEAD}" alt=""></span>george.videne <span>${esc(sh.name)}</span><span class="sp"></span>
+     <button type="button" id="spause" aria-label="Pauză">${SV(RM?'<path d="M8 5v14l11-7z"/>':'<path d="M8 5v14M16 5v14"/>')}</button>
+     <button type="button" id="sclose" aria-label="Închide">${SV('<path d="M6 6l12 12M18 6 6 18"/>')}</button></div>
+   <button class="stap l" type="button" aria-label="Înapoi"></button><button class="stap r" type="button" aria-label="Înainte"></button>`;
+  $('#sclose').onclick=closeStory;
+  $('#spause').onclick=()=>{ paused=!paused; $('#spause').innerHTML=SV(paused?'<path d="M8 5v14l11-7z"/>':'<path d="M8 5v14M16 5v14"/>'); if(!paused){ t0=performance.now()-elapsed; tick(); } };
+  story.querySelector('.stap.l').onclick=()=>storyGo(-1);
+  story.querySelector('.stap.r').onclick=()=>storyGo(1);
+  elapsed=0; t0=performance.now(); paused=RM; cancelAnimationFrame(timer); if(!RM) tick(); else story.querySelectorAll('.sbars i')[sj].firstChild.style.width='100%';
+}
+function tick(){
+  if(paused||story.hidden) return;
+  elapsed=performance.now()-t0; const k=Math.min(1,elapsed/DUR);
+  const bar=story.querySelectorAll('.sbars i')[sj]; if(bar) bar.firstChild.style.width=(k*100)+'%';
+  if(k>=1){ storyGo(1); return; }
+  timer=requestAnimationFrame(tick);
+}
+function storyGo(d){
+  const n=sh.slides.length; sj+=d;
+  if(sj<0){ sj=0; }
+  if(sj>=n){ const i=H.findIndex(h=>h.id===sh.id); const nx=H[i+1]; if(nx){ sh=nx; sj=0; seen.add(nx.id); store.set('seen',[...seen]); renderHL(); } else { closeStory(); return; } }
+  drawStory();
+}
+function closeStory(){ cancelAnimationFrame(timer); story.hidden=true; if(modal.hidden) document.body.style.overflow=''; }
+
+/* ---------- DM ---------- */
+const dm=$('#dm');
+function openDM(text){
+  $('#dmtext').value=text||'Salut, George!\n\nAm văzut profilul tău pe Feedfolio și aș vrea să vorbim despre ';
+  updMail(); dm.hidden=false; setTimeout(()=>{const t=$('#dmtext'); t.focus(); t.setSelectionRange(t.value.length,t.value.length);},50);
+}
+function updMail(){ $('#mailto').href=`mailto:${EMAIL}?subject=${encodeURIComponent('Salut, George')}&body=${encodeURIComponent($('#dmtext').value)}`; }
+$('#dmtext').addEventListener('input',updMail);
+$('#dmform').addEventListener('submit',e=>{
+  e.preventDefault(); const txt=`Către: ${EMAIL}\n\n${$('#dmtext').value}`;
+  const ok=()=>toast('Mesajul a fost copiat. Lipește-l în e-mailul tău către '+EMAIL+'.');
+  const fail=()=>{ const t=$('#dmtext'); t.focus(); t.select(); toast('Textul e selectat. Copiază-l cu Ctrl+C sau ⌘+C.'); };
+  try{ navigator.clipboard.writeText(txt).then(ok,fail); }catch(err){ fail(); }
+});
+dm.addEventListener('click',e=>{ if(e.target===dm||e.target.closest('[data-close-dm]')) dm.hidden=true; });
+
+/* ---------- global ---------- */
+function toast(html){ const el=$('#toast'); el.innerHTML=html; el.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('on'),3600); }
+document.addEventListener('click',e=>{
+  const t=e.target;
+  if(t.closest('[data-dm]')){ e.preventDefault(); if(!story.hidden) closeStory(); openDM(); return; }
+  const st=t.closest('[data-story]'); if(st){ openStory(st.dataset.story); return; }
+  const po=t.closest('[data-post]'); if(po){ openPost(po.dataset.post,po); return; }
+  const tb=t.closest('[data-tab]'); if(tb){ tab=tb.dataset.tab; document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',x===tb)); renderGrid(); return; }
+  if(t.closest('#follow')){ following=!following; store.set('follow',following); renderFollow(); if(following) toast(`Mersi! Ca să mă urmărești de-adevăratelea: <a href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>.`); return; }
+  if(t.closest('#home')){ e.preventDefault(); query=''; $('#q').value=''; tab='posts'; document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',x.dataset.tab==='posts')); renderGrid(); window.scrollTo({top:0,behavior:RM?'auto':'smooth'}); return; }
+  if(t.closest('#searchBtn')){ const q=$('#q'); if(getComputedStyle($('.sbox')).display==='none'){ const v=window.prompt?null:null; $('#grid').scrollIntoView({behavior:RM?'auto':'smooth'}); toggleMobileSearch(); } else q.focus(); return; }
+});
+function toggleMobileSearch(){
+  let bar=$('#msearch');
+  if(bar){ bar.remove(); query=''; renderGrid(); return; }
+  bar=document.createElement('div'); bar.id='msearch'; bar.className='sbox'; bar.style.cssText='display:flex;width:100%;margin:0 0 12px';
+  bar.innerHTML='<svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input type="search" placeholder="Caută: AI, Black Friday, Moët…" aria-label="Caută în postări">';
+  $('#grid').before(bar); const inp=bar.querySelector('input'); inp.focus();
+  inp.addEventListener('input',e=>{ query=e.target.value.trim().toLowerCase(); renderGrid(); });
+}
+$('#q').addEventListener('input',e=>{ query=e.target.value.trim().toLowerCase(); renderGrid(); });
+document.querySelectorAll('[data-story]').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openStory(el.dataset.story); } }));
+document.addEventListener('keydown',e=>{
+  if(!dm.hidden){ if(e.key==='Escape') dm.hidden=true; return; }
+  if(!story.hidden){ if(e.key==='Escape') closeStory(); if(e.key==='ArrowRight') storyGo(1); if(e.key==='ArrowLeft') storyGo(-1); return; }
+  if(!modal.hidden){ if(e.key==='Escape') closePost(); if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1); }
+});
+const h=location.hash.slice(1); if(BYID[h]) openPost(h);
+})();
+</script>
+
+</body>
+</html>
